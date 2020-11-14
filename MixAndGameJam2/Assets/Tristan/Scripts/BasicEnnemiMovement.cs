@@ -18,6 +18,26 @@ public class BasicEnnemiMovement : MonoBehaviour
 
         x = (int)(transform.position.x / map.sizeTile);
         z = (int)(transform.position.z / map.sizeTile);
+
+        if (currentDirection == "u") // UP
+        {
+            transform.LookAt(new Vector3(0, 0, 99999), Vector3.up);
+        }
+
+        else if (currentDirection == "d") // DOWN
+        {
+            transform.LookAt(new Vector3(0, 0, -99999), Vector3.up);
+        }
+
+        else if (currentDirection == "r") // RIGHT
+        {
+            transform.LookAt(new Vector3(99999, 0, 0), Vector3.up);
+        }
+
+        else if (currentDirection == "l") // LEFT
+        {
+            transform.LookAt(new Vector3(-99999, 0, 0), Vector3.up);
+        }
     }
 
     // Update is called once per frame
