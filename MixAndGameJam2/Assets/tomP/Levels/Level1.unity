@@ -849,8 +849,64 @@ PrefabInstance:
     - target: {fileID: 2419874458031311304, guid: 7faeb53c39191d94e947c0099d46f957,
         type: 3}
       propertyPath: deck.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2419874458031311304, guid: 7faeb53c39191d94e947c0099d46f957,
+        type: 3}
+      propertyPath: deck.Array.data[0].name
+      value: m2r
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419874458031311304, guid: 7faeb53c39191d94e947c0099d46f957,
+        type: 3}
+      propertyPath: deck.Array.data[0].number
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419874458031311304, guid: 7faeb53c39191d94e947c0099d46f957,
+        type: 3}
+      propertyPath: deck.Array.data[1].name
+      value: m2u
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419874458031311304, guid: 7faeb53c39191d94e947c0099d46f957,
+        type: 3}
+      propertyPath: deck.Array.data[1].number
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419874458031311304, guid: 7faeb53c39191d94e947c0099d46f957,
+        type: 3}
+      propertyPath: deck.Array.data[2].name
+      value: m1l
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419874458031311304, guid: 7faeb53c39191d94e947c0099d46f957,
+        type: 3}
+      propertyPath: deck.Array.data[2].number
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419874458031311304, guid: 7faeb53c39191d94e947c0099d46f957,
+        type: 3}
+      propertyPath: deck.Array.data[3].name
+      value: hide
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419874458031311304, guid: 7faeb53c39191d94e947c0099d46f957,
+        type: 3}
+      propertyPath: deck.Array.data[3].number
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419874458031311304, guid: 7faeb53c39191d94e947c0099d46f957,
+        type: 3}
+      propertyPath: deck.Array.data[4].name
+      value: m1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419874458031311304, guid: 7faeb53c39191d94e947c0099d46f957,
+        type: 3}
+      propertyPath: deck.Array.data[4].number
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419874458031311304, guid: 7faeb53c39191d94e947c0099d46f957,
+        type: 3}
+      propertyPath: card
+      value: 
+      objectReference: {fileID: 4006831275144977001, guid: 6b4125e84bc8cc84799a657d90ff1b2a,
+        type: 3}
     - target: {fileID: 5372614255692458680, guid: 7faeb53c39191d94e947c0099d46f957,
         type: 3}
       propertyPath: m_Name

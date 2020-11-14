@@ -16,8 +16,18 @@ public class CardManager : MonoBehaviour
         title.text = newTitle;
     }
 
+    public string getTitle()
+    {
+        return title.text;
+    }
+
     public void setDescription(string newDescription)
     {
         description.text = newDescription;
+    }
+
+    public string getDescription()
+    {
+        return description.text;
     }
 }
