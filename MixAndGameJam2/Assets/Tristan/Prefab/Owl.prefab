@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 5622905694122794144}
   m_Layer: 0
   m_Name: Owl
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -215,3 +215,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e541d775b5c116c4598c64301d61a5aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  range: 3

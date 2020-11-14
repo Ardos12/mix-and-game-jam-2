@@ -28,10 +28,6 @@ public class OwlVisibility : MonoBehaviour
         x = GetComponent<OwlBehavior>().getX();
         z = GetComponent<OwlBehavior>().getZ();
 
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            Debug.Log(isPlayerVisible());
-        }
     }
 
     public bool isTileVisible(int x, int z)
