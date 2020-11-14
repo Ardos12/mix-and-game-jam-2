@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Colla/Scene_test.unity
+- path: Assets/tomP/Levels/Level1.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
