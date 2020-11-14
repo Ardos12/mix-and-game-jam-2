@@ -3,7 +3,27 @@ guid: c7f7d0cc124cdf14586c7ac6f3224db9
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BOIS
+    second: {fileID: 2100000, guid: ad784b2582c5f324aa671e39feaa130f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SOL
+    second: {fileID: 2100000, guid: b141f7d59a9b7d74f9e3be85e0c235c8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TENTE1
+    second: {fileID: 2100000, guid: 5c66abdba5cb01c4ab4d373e5b0bca17, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TENTE2
+    second: {fileID: 2100000, guid: 70260fc0347daa542949672870be5ac5, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
