@@ -109,6 +109,7 @@ public class BasicEnnemiMovement : MonoBehaviour
             //Have to go back
             else
             {
+                transform.LookAt(new Vector3(0, 0, -99999), Vector3.up); 
                 currentDirection = "d";
             }
         }
@@ -178,6 +179,7 @@ public class BasicEnnemiMovement : MonoBehaviour
             //Have to go back
             else
             {
+                transform.LookAt(new Vector3(0, 0, 99999), Vector3.up);
                 currentDirection = "u";
             }
         }
@@ -247,6 +249,7 @@ public class BasicEnnemiMovement : MonoBehaviour
             //Have to go back
             else
             {
+                transform.LookAt(new Vector3(99999, 0, 0), Vector3.up);
                 currentDirection = "r";
             }
         }
@@ -315,6 +318,7 @@ public class BasicEnnemiMovement : MonoBehaviour
             //Have to go back
             else
             {
+                transform.LookAt(new Vector3(-99999, 0, 0), Vector3.up);
                 currentDirection = "l";
             }
 
@@ -330,6 +334,7 @@ public class BasicEnnemiMovement : MonoBehaviour
             x = (int)(transform.position.x / map.sizeTile);
             z = (int)(transform.position.z / map.sizeTile);
 
+            transform.LookAt(new Vector3(0, 0, 99999), Vector3.up);
             currentDirection = "u";
         }
 
@@ -339,6 +344,7 @@ public class BasicEnnemiMovement : MonoBehaviour
             x = (int)(transform.position.x / map.sizeTile);
             z = (int)(transform.position.z / map.sizeTile);
 
+            transform.LookAt(new Vector3(99999, 0, 0), Vector3.up);
             currentDirection = "r";
         }
 
@@ -348,6 +354,7 @@ public class BasicEnnemiMovement : MonoBehaviour
             x = (int)(transform.position.x / map.sizeTile);
             z = (int)(transform.position.z / map.sizeTile);
 
+            transform.LookAt(new Vector3(0, 0, -99999), Vector3.up);
             currentDirection = "d";
         }
 
@@ -357,6 +364,7 @@ public class BasicEnnemiMovement : MonoBehaviour
             x = (int)(transform.position.x / map.sizeTile);
             z = (int)(transform.position.z / map.sizeTile);
 
+            transform.LookAt(new Vector3(-99999, 0, 0), Vector3.up);
             currentDirection = "l";
         }
     }

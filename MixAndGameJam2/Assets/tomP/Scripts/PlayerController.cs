@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         DebugControls();
-        Debug.Log("X : " + x + "\nZ : " + z);
+        //Debug.Log("X : " + x + "\nZ : " + z);
     }
 
     private void DebugControls()
