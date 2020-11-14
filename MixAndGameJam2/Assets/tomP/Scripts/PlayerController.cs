@@ -118,4 +118,13 @@ public class PlayerController : MonoBehaviour
          */
         hasActed = true;
     }
+
+    public int getX()
+    {
+        return x;
+    }
+    public int getZ()
+    {
+        return z;
+    }
 }
