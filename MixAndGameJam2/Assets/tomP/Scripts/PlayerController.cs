@@ -127,4 +127,18 @@ public class PlayerController : MonoBehaviour
     {
         return z;
     }
+
+    public void setX(int newX)
+    {
+        x = newX;
+    }
+    public void setZ(int newZ)
+    {
+        z = newZ;
+    }
+
+    public bool getHidden()
+    {
+        return hidden;
+    }
 }

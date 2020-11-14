@@ -841,6 +841,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2419874458031311304, guid: 7faeb53c39191d94e947c0099d46f957,
+        type: 3}
+      propertyPath: cardsInDeck.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419874458031311304, guid: 7faeb53c39191d94e947c0099d46f957,
+        type: 3}
+      propertyPath: deck.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5372614255692458680, guid: 7faeb53c39191d94e947c0099d46f957,
         type: 3}
       propertyPath: m_Name
