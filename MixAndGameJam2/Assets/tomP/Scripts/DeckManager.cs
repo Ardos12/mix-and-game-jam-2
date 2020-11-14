@@ -52,7 +52,7 @@ public class DeckManager : MonoBehaviour
             {
                 for (int j = 0; j < deck[i].number; j++)
                 {
-                    temp = Instantiate(card, Vector3.zero, Quaternion.identity);
+                    temp = Instantiate(card, Vector3.zero, Quaternion.identity, transform);
                     temp.AddComponent<CardMove1Up>(); //AJOUT DU PREFAB 1
                 }
             }
@@ -60,7 +60,7 @@ public class DeckManager : MonoBehaviour
             {
                 for (int j = 0; j < deck[i].number; j++)
                 {
-                    temp = Instantiate(card, Vector3.zero, Quaternion.identity);
+                    temp = Instantiate(card, Vector3.zero, Quaternion.identity, transform);
                     temp.AddComponent<CardMove1Down>(); //AJOUT DU PREFAB 2
                 }
             }
@@ -68,7 +68,7 @@ public class DeckManager : MonoBehaviour
             {
                 for (int j = 0; j < deck[i].number; j++)
                 {
-                    temp = Instantiate(card, Vector3.zero, Quaternion.identity);
+                    temp = Instantiate(card, Vector3.zero, Quaternion.identity, transform);
                     temp.AddComponent<CardMove1Left>(); //AJOUT DU PREFAB 3
                 }
             }
@@ -76,7 +76,7 @@ public class DeckManager : MonoBehaviour
             {
                 for (int j = 0; j < deck[i].number; j++)
                 {
-                    temp = Instantiate(card, Vector3.zero, Quaternion.identity);
+                    temp = Instantiate(card, Vector3.zero, Quaternion.identity, transform);
                     temp.AddComponent<CardMove1Right>(); //AJOUT DU PREFAB 4
                 }
             }
@@ -84,7 +84,7 @@ public class DeckManager : MonoBehaviour
             {
                 for (int j = 0; j < deck[i].number; j++)
                 {
-                    temp = Instantiate(card, Vector3.zero, Quaternion.identity);
+                    temp = Instantiate(card, Vector3.zero, Quaternion.identity, transform);
                     temp.AddComponent<CardMove2Up>(); //AJOUT DU PREFAB 5
                 }
             }
@@ -92,7 +92,7 @@ public class DeckManager : MonoBehaviour
             {
                 for (int j = 0; j < deck[i].number; j++)
                 {
-                    temp = Instantiate(card, Vector3.zero, Quaternion.identity);
+                    temp = Instantiate(card, Vector3.zero, Quaternion.identity, transform);
                     temp.AddComponent<CardMove2Down>(); //AJOUT DU PREFAB 6
                 }
             }
@@ -100,7 +100,7 @@ public class DeckManager : MonoBehaviour
             {
                 for (int j = 0; j < deck[i].number; j++)
                 {
-                    temp = Instantiate(card, Vector3.zero, Quaternion.identity);
+                    temp = Instantiate(card, Vector3.zero, Quaternion.identity, transform);
                     temp.AddComponent<CardMove2Left>(); //AJOUT DU PREFAB 7
                 }
             }
@@ -108,7 +108,7 @@ public class DeckManager : MonoBehaviour
             {
                 for (int j = 0; j < deck[i].number; j++)
                 {
-                    temp = Instantiate(card, Vector3.zero, Quaternion.identity);
+                    temp = Instantiate(card, Vector3.zero, Quaternion.identity, transform);
                     temp.AddComponent<CardMove2Right>(); //AJOUT DU PREFAB 8
                 }
             }
@@ -116,7 +116,7 @@ public class DeckManager : MonoBehaviour
             {
                 for (int j = 0; j < deck[i].number; j++)
                 {
-                    temp = Instantiate(card, Vector3.zero, Quaternion.identity);
+                    temp = Instantiate(card, Vector3.zero, Quaternion.identity, transform);
                     temp.AddComponent<CardMove1Any>(); //AJOUT DU PREFAB 9
                 }
             }
@@ -124,7 +124,7 @@ public class DeckManager : MonoBehaviour
             {
                 for (int j = 0; j < deck[i].number; j++)
                 {
-                    temp = Instantiate(card, Vector3.zero, Quaternion.identity);
+                    temp = Instantiate(card, Vector3.zero, Quaternion.identity, transform);
                     temp.AddComponent<CardRock>(); //AJOUT DU PREFAB 10
                 }
             }
@@ -132,7 +132,7 @@ public class DeckManager : MonoBehaviour
             {
                 for (int j = 0; j < deck[i].number; j++)
                 {
-                    temp = Instantiate(card, Vector3.zero, Quaternion.identity);
+                    temp = Instantiate(card, Vector3.zero, Quaternion.identity, transform);
                     temp.AddComponent<CardHide>(); //AJOUT DU PREFAB 11
                 }
             }
@@ -140,7 +140,7 @@ public class DeckManager : MonoBehaviour
             {
                 for (int j = 0; j < deck[i].number; j++)
                 {
-                    temp = Instantiate(card, Vector3.zero, Quaternion.identity);
+                    temp = Instantiate(card, Vector3.zero, Quaternion.identity, transform);
                     temp.AddComponent<CardHideSpecial>(); //AJOUT DU PREFAB 12
                 }
             }
@@ -148,7 +148,7 @@ public class DeckManager : MonoBehaviour
             {
                 for (int j = 0; j < deck[i].number; j++)
                 {
-                    temp = Instantiate(card, Vector3.zero, Quaternion.identity);
+                    temp = Instantiate(card, Vector3.zero, Quaternion.identity, transform);
                     temp.AddComponent<CardKO>(); //AJOUT DU PREFAB 13
                 }
             }
@@ -156,7 +156,7 @@ public class DeckManager : MonoBehaviour
             {
                 for (int j = 0; j < deck[i].number; j++)
                 {
-                    temp = Instantiate(card, Vector3.zero, Quaternion.identity);
+                    temp = Instantiate(card, Vector3.zero, Quaternion.identity, transform);
                     temp.AddComponent<CardCosplay>(); //AJOUT DU PREFAB 14
                 }
             }
@@ -164,7 +164,7 @@ public class DeckManager : MonoBehaviour
             {
                 for (int j = 0; j < deck[i].number; j++)
                 {
-                    temp = Instantiate(card, Vector3.zero, Quaternion.identity);
+                    temp = Instantiate(card, Vector3.zero, Quaternion.identity, transform);
                     temp.AddComponent<CardOwl>(); //AJOUT DU PREFAB 15
                 }
             }
@@ -207,7 +207,7 @@ public class DeckManager : MonoBehaviour
 
     public void useCard(int index)
     {
-        cardsInTrash.Add(cardsInHand[index]);
+        cardsInTrash.Insert(cardsInTrash.Count, cardsInHand[index]);
         cardsInHand.RemoveAt(index);
     }
 
@@ -215,29 +215,116 @@ public class DeckManager : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
-            for (int i = 0; i < cardsInDeck.Count; i++)
-            {
-                Debug.Log("Carte " + i + " : " + cardsInDeck[i].getTitle());
-            }
+            //for (int i = 0; i < cardsInDeck.Count; i++)
+            //{
+            //    Debug.Log("Carte " + i + " : " + cardsInDeck[i].getTitle());
+                
+            //}
+            Debug.Log("Pioche : " + cardsInDeck.Count);
+            Debug.Log("Defausse : " + cardsInTrash.Count);
+            Debug.Log("Main : " + cardsInHand.Count);
         }
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        //if (Input.GetKeyDown(KeyCode.Return))
+        //{
+        //    if (cardsInHand.Count == 0)
+        //    {
+        //        Debug.Log("Main vide !");
+        //    }
+        //    else
+        //    {
+        //        Debug.Log("Used card !");
+        //        useCard(0);
+        //    }
+        //}
+
+        //if (Input.GetKeyDown(KeyCode.Backspace))
+        //{
+        //    if(cardsInDeck.Count != 0) Debug.Log("Drew card " + cardsInDeck[0].getTitle());
+        //    drawACard();
+        //}
+
+
+        PositionCardsOnScreen();
+
+    }
+
+    public int getCardIndex(CardManager card)
+    {
+        return cardsInHand.IndexOf(card);
+    }
+
+    public void PositionCardsOnScreen()
+    {
+        PositionHand();
+        PositionDeck();
+        PositionTrash();
+    }
+
+    public void PositionHand()
+    {
+        foreach(CardManager card in cardsInHand)
         {
-            if (cardsInHand.Count == 0)
-            {
-                Debug.Log("Main vide !");
-            }
-            else
-            {
-                Debug.Log("Used card !");
-                useCard(0);
-            }
+            card.transform.rotation = transform.rotation;
+            card.isInHand = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Backspace))
+        switch(cardsInHand.Count)
         {
-            Debug.Log("Drew card " + cardsInDeck[0].getTitle());
-            drawACard();
+            case 1:
+                cardsInHand[0].position = transform.position + new Vector3(0, 0, -1.5f);
+                break;
+            case 2:
+                cardsInHand[0].position = transform.position + new Vector3(-0.62f, 0, -1.5f);
+                cardsInHand[1].position = transform.position + new Vector3(0.62f, 0, -1.5f);
+                break;
+            case 3:
+                cardsInHand[0].position = transform.position + new Vector3(-1.24f, 0, -1.5f);
+                cardsInHand[1].position = transform.position + new Vector3(0f, 0, -1.5f);
+                cardsInHand[2].position = transform.position + new Vector3(1.24f, 0, -1.5f);
+                break;
+            case 4:
+                cardsInHand[0].position = transform.position + new Vector3(-1.85f, 0, -1.5f);
+                cardsInHand[1].position = transform.position + new Vector3(-0.62f, 0, -1.5f);
+                cardsInHand[2].position = transform.position + new Vector3(0.62f, 0, -1.5f);
+                cardsInHand[3].position = transform.position + new Vector3(1.85f, 0, -1.5f);
+                break;
+            case 5:
+                cardsInHand[0].position = transform.position + new Vector3(-2.5f, 0, -1.5f);
+                cardsInHand[1].position = transform.position + new Vector3(-1.24f, 0, -1.5f);
+                cardsInHand[2].position = transform.position + new Vector3(0, 0, -1.5f);
+                cardsInHand[3].position = transform.position + new Vector3(1.24f, 0, -1.5f);
+                cardsInHand[4].position = transform.position + new Vector3(2.5f, 0, -1.5f);
+                break;
+            case 6:
+                cardsInHand[0].position = transform.position + new Vector3(-3.1f, 0, -1.5f);
+                cardsInHand[1].position = transform.position + new Vector3(-1.85f, 0, -1.5f);
+                cardsInHand[2].position = transform.position + new Vector3(-0.62f, 0, -1.5f);
+                cardsInHand[3].position = transform.position + new Vector3(0.62f, 0, -1.5f);
+                cardsInHand[4].position = transform.position + new Vector3(1.85f, 0, -1.5f);
+                cardsInHand[5].position = transform.position + new Vector3(3.1f, 0, -1.5f);
+                break;
+            default:
+                break;
+        }
+    }
+    public void PositionDeck()
+    {
+        for(int i = 0; i < cardsInDeck.Count; i++)
+        {
+            cardsInDeck[i].position = transform.position + new Vector3(-4f, -1.36f + i * 0.05f, -1f);
+            cardsInDeck[i].transform.rotation = transform.rotation;
+            cardsInDeck[i].transform.Rotate(new Vector3(0, 180, 0));
+            cardsInDeck[i].isInHand = false;
+        }
+    }
+    public void PositionTrash()
+    {
+        for (int i = 0; i < cardsInTrash.Count; i++)
+        {
+            cardsInTrash[i].position = transform.position + new Vector3(4f, -1.36f + i * 0.05f, -1f);
+            cardsInTrash[i].transform.rotation = transform.rotation;
+            cardsInTrash[i].isInHand = false;
         }
     }
 }

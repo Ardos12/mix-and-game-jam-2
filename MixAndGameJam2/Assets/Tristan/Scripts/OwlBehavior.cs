@@ -42,10 +42,7 @@ public class OwlBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            move();
-        }
+        
     }
 
     public int getX()
