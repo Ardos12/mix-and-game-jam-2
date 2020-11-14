@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        DebugControls();
+        //DebugControls();
         //Debug.Log("X : " + x + "\nZ : " + z);
     }
 
