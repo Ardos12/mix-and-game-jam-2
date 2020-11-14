@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
     private bool hasMoved;
     private bool hasActed;
     private int cosplay;
+    private Map map;
+
+    private int x, z;
 
     [SerializeField]
     private float tileSize;
@@ -20,12 +23,17 @@ public class PlayerController : MonoBehaviour
         hasMoved = false;
         hasActed = false;
         cosplay = 0;
+        map = FindObjectOfType<Map>();
+
+        x = (int) (transform.position.x / tileSize);
+        z = (int) (transform.position.z / tileSize);
     }
 
     
     void Update()
     {
         DebugControls();
+        Debug.Log("X : " + x + "\nZ : " + z);
     }
 
     private void DebugControls()
@@ -38,41 +46,45 @@ public class PlayerController : MonoBehaviour
 
     public void moveLeft(int tileNb)
     {
-        if(true) // Can move left
+        if(map.getTile(x - 1, z) != null && map.getTile(x - 1, z).GetComponent<Wall>() == null) // Can move left
         {
             Debug.Log("Gauche");
             transform.position -= new Vector3(tileSize * tileNb, 0, 0);
-            hasMoved = true;
+            x = (int)(transform.position.x / tileSize);
+            z = (int)(transform.position.z / tileSize);
         }
     }
 
     public void moveRight(int tileNb)
     {
-        if (true) // Can move right
+        if (map.getTile(x + 1, z) != null && map.getTile(x + 1, z).GetComponent<Wall>() == null) // Can move right
         {
             Debug.Log("Droite");
             transform.position += new Vector3(tileSize * tileNb, 0, 0);
-            hasMoved = true;
+            x = (int)(transform.position.x / tileSize);
+            z = (int)(transform.position.z / tileSize);
         }
     }
 
     public void moveUp(int tileNb)
     {
-        if (true) // Can move up
+        if (map.getTile(x, z + 1) != null && map.getTile(x, z + 1).GetComponent<Wall>() == null) // Can move up
         {
             Debug.Log("Haut");
             transform.position += new Vector3(0, 0, tileSize * tileNb);
-            hasMoved = true;
+            x = (int)(transform.position.x / tileSize);
+            z = (int)(transform.position.z / tileSize);
         }
     }
 
     public void moveDown(int tileNb)
     {
-        if (true) // Can move down
+        if (map.getTile(x, z - 1) != null && map.getTile(x, z - 1).GetComponent<Wall>() == null) // Can move down
         {
             Debug.Log("Bas");
             transform.position -= new Vector3(0, 0, tileSize * tileNb);
-            hasMoved = true;
+            x = (int)(transform.position.x / tileSize);
+            z = (int)(transform.position.z / tileSize);
         }
     }
 
