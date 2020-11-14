@@ -29,6 +29,16 @@ public class BasicEnnemiMovement : MonoBehaviour
         }
     }
 
+    public int getX()
+    {
+        return x;
+    }
+
+    public int getZ()
+    {
+        return z;
+    }
+
     public void move()
     {
         int[] tabDirection = { 0, 0, 0, 0 }; // 0 : up, 1 : right, 2 : down, 3 : left
@@ -99,14 +109,14 @@ public class BasicEnnemiMovement : MonoBehaviour
             //Have to go back
             else
             {
-                nextMove = 2;
+                currentDirection = "d";
             }
         }
 
 
         //--------------------------------------------------------------------------------------------
 
-        if (currentDirection == "d")
+        else if (currentDirection == "d")
         {
             if (map.getTile(x, z - 1) != null && map.getTile(x, z - 1).GetComponent<Wall>() == null) //DOWN
             {
@@ -168,14 +178,14 @@ public class BasicEnnemiMovement : MonoBehaviour
             //Have to go back
             else
             {
-                nextMove = 0;
+                currentDirection = "u";
             }
         }
 
         //--------------------------------------------------------------------------------------------
 
 
-        if (currentDirection == "l")
+        else if (currentDirection == "l")
         {
             if (map.getTile(x - 1, z) != null && map.getTile(x - 1, z).GetComponent<Wall>() == null) // LEFT
             {
@@ -237,13 +247,13 @@ public class BasicEnnemiMovement : MonoBehaviour
             //Have to go back
             else
             {
-                nextMove = 1;
+                currentDirection = "r";
             }
         }
 
         //--------------------------------------------------------------------------------------------
 
-        if (currentDirection == "r")
+        else if (currentDirection == "r")
         {
 
             if (map.getTile(x + 1, z) != null && map.getTile(x + 1, z).GetComponent<Wall>() == null) // RIGHT
@@ -305,7 +315,7 @@ public class BasicEnnemiMovement : MonoBehaviour
             //Have to go back
             else
             {
-                nextMove = 3;
+                currentDirection = "l";
             }
 
         }
