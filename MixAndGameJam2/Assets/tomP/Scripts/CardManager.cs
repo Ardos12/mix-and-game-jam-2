@@ -17,6 +17,8 @@ public class CardManager : MonoBehaviour
     public bool isInHand;
 
     private DeckManager deck;
+    private GameController gameController;
+    private PlayerController playerController;
 
     private void Start()
     {
@@ -25,17 +27,19 @@ public class CardManager : MonoBehaviour
         isInHand = false;
         notSelectedOffset = new Vector3(0, -0.8f, -1.2f);
         deck = FindObjectOfType<DeckManager>();
+        gameController = FindObjectOfType<GameController>();
+        playerController = FindObjectOfType<PlayerController>();
     }
 
     public void Update()
     {
-        if (isMouseOver || !isInHand) transform.position = position;
+        if (isMouseOver || !isInHand || !gameController.getPlayerTurn()) transform.position = position;
         else transform.position = position + notSelectedOffset;
     }
 
     private void OnMouseOver()
     {
-        isMouseOver = true;
+        if(gameController.getPlayerTurn()) isMouseOver = true;
     }
 
     private void OnMouseExit()
@@ -45,8 +49,9 @@ public class CardManager : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if(isInHand)
+        if(isInHand && gameController.getPlayerTurn())
         {
+            useCard();
             deck.useCard(deck.getCardIndex(this));
         }
     }
@@ -69,5 +74,17 @@ public class CardManager : MonoBehaviour
     public string getDescription()
     {
         return description.text;
+    }
+
+    public void useCard()
+    {
+        if (GetComponent<CardMove1Up>() != null) playerController.moveUp(1);
+        else if (GetComponent<CardMove1Down>() != null) playerController.moveDown(1);
+        else if (GetComponent<CardMove1Left>() != null) playerController.moveLeft(1);
+        else if (GetComponent<CardMove1Right>() != null) playerController.moveRight(1);
+        else if (GetComponent<CardMove2Up>() != null) playerController.moveUp(2);
+        else if (GetComponent<CardMove2Down>() != null) playerController.moveDown(2);
+        else if (GetComponent<CardMove2Left>() != null) playerController.moveLeft(2);
+        else if (GetComponent<CardMove2Right>() != null) playerController.moveRight(2);
     }
 }

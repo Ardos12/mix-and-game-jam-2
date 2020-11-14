@@ -37,6 +37,9 @@ public class DeckManager : MonoBehaviour
     private List<CardManager> cardsInHand;
     private List<CardManager> cardsInDeck;
     private List<CardManager> cardsInTrash;
+    private GameController gameController;
+
+    private int actionsLeft = 2;
 
     void Start()
     {
@@ -173,6 +176,7 @@ public class DeckManager : MonoBehaviour
         cardsInDeck = new List<CardManager>(cards);
 
         cardsInDeck = shuffleList(cardsInDeck);
+        gameController = FindObjectOfType<GameController>();
     }
 
     public List<CardManager> shuffleList(List<CardManager> list)
@@ -209,6 +213,7 @@ public class DeckManager : MonoBehaviour
     {
         cardsInTrash.Insert(cardsInTrash.Count, cardsInHand[index]);
         cardsInHand.RemoveAt(index);
+        actionsLeft--;
     }
 
     void Update()
@@ -243,6 +248,19 @@ public class DeckManager : MonoBehaviour
         //    if(cardsInDeck.Count != 0) Debug.Log("Drew card " + cardsInDeck[0].getTitle());
         //    drawACard();
         //}
+
+        if(gameController.getPlayerTurn())
+        {
+            if (actionsLeft == 2)
+            {
+                while (cardsInHand.Count < 6) drawACard();
+            }
+            else if (actionsLeft <= 0)
+            {
+                gameController.endPlayerTurn();
+                actionsLeft = 2;
+            }
+        }
 
 
         PositionCardsOnScreen();
