@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
                 transform.position -= new Vector3(tileSize, 0, 0);
                 x = (int)(transform.position.x / tileSize);
                 z = (int)(transform.position.z / tileSize);
+                transform.LookAt(new Vector3(-99999, 0, 0), Vector3.up);
             }
         }
     }
@@ -66,6 +67,7 @@ public class PlayerController : MonoBehaviour
             transform.position += new Vector3(tileSize, 0, 0);
             x = (int)(transform.position.x / tileSize);
             z = (int)(transform.position.z / tileSize);
+            transform.LookAt(new Vector3(99999, 0, 0), Vector3.up);
         }
     }
 
@@ -77,6 +79,7 @@ public class PlayerController : MonoBehaviour
             transform.position += new Vector3(0, 0, tileSize);
             x = (int)(transform.position.x / tileSize);
             z = (int)(transform.position.z / tileSize);
+            transform.LookAt(new Vector3(0, 0, 99999), Vector3.up);
         }
     }
 
@@ -88,6 +91,7 @@ public class PlayerController : MonoBehaviour
             transform.position -= new Vector3(0, 0, tileSize);
             x = (int)(transform.position.x / tileSize);
             z = (int)(transform.position.z / tileSize);
+            transform.LookAt(new Vector3(0, 0, -99999), Vector3.up);
         }
     }
 
