@@ -28,7 +28,7 @@ public class CardManager : MonoBehaviour
         position = transform.position;
         isMouseOver = false;
         isInHand = false;
-        notSelectedOffset = new Vector3(0, -0.8f, -1.2f);
+        notSelectedOffset = new Vector3(0, -0.4f, -.6f);
         deck = FindObjectOfType<DeckManager>();
         gameController = FindObjectOfType<GameController>();
         playerController = FindObjectOfType<PlayerController>();

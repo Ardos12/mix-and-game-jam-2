@@ -9,7 +9,7 @@ public class CardHide : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sprite = Resources.Load<Sprite>("CardsSprites/CARDS__0012_HIDE");
+        sprite = Resources.Load<Sprite>("CardsSprites/HIDE");
 
         GetComponent<CardManager>().setTitle("Hide");
         GetComponent<CardManager>().setDescription("You hide in a tree for 1 turn.");

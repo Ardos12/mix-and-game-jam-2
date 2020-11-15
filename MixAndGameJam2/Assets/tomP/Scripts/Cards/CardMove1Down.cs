@@ -9,7 +9,7 @@ public class CardMove1Down : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sprite = Resources.Load<Sprite>("CardsSprites/CARDS__0004_1X_DOWN");
+        sprite = Resources.Load<Sprite>("CardsSprites/1DOWN");
 
         GetComponent<CardManager>().setTitle("Move 1 down");
         GetComponent<CardManager>().setDescription("Move the character 1 tile down.");

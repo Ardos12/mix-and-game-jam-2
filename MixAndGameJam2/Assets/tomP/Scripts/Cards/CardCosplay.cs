@@ -9,7 +9,7 @@ public class CardCosplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sprite = Resources.Load<Sprite>("CardsSprites/CARDS__0011_HIDE_SPECIAL");
+        sprite = Resources.Load<Sprite>("CardsSprites/HIDE_SPECIAL");
 
         GetComponent<CardManager>().setTitle("Bush cosplay");
         GetComponent<CardManager>().setDescription("The character can't be seen for 3 turns.");

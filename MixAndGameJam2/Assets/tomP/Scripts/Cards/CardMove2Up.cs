@@ -10,7 +10,7 @@ public class CardMove2Up : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sprite = Resources.Load<Sprite>("CardsSprites/CARDS__0004_2X_UP");
+        sprite = Resources.Load<Sprite>("CardsSprites/2UP");
 
         GetComponent<CardManager>().setTitle("Move 2 up");
         GetComponent<CardManager>().setDescription("Move the character 2 tiles up.");

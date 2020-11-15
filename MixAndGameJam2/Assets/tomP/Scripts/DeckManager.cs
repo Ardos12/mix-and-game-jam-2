@@ -293,37 +293,37 @@ public class DeckManager : MonoBehaviour
         switch(cardsInHand.Count)
         {
             case 1:
-                cardsInHand[0].position = transform.position + new Vector3(0, 0, -1.5f);
+                cardsInHand[0].position = transform.position + new Vector3(0, -.4f, -2.1f);
                 break;
             case 2:
-                cardsInHand[0].position = transform.position + new Vector3(-0.62f, 0, -1.5f);
-                cardsInHand[1].position = transform.position + new Vector3(0.62f, 0, -1.5f);
+                cardsInHand[0].position = transform.position + new Vector3(-0.62f, -.4f, -2.1f);
+                cardsInHand[1].position = transform.position + new Vector3(0.62f, -.4f, -2.1f);
                 break;
             case 3:
-                cardsInHand[0].position = transform.position + new Vector3(-1.24f, 0, -1.5f);
-                cardsInHand[1].position = transform.position + new Vector3(0f, 0, -1.5f);
-                cardsInHand[2].position = transform.position + new Vector3(1.24f, 0, -1.5f);
+                cardsInHand[0].position = transform.position + new Vector3(-1.24f, -.4f, -2.1f);
+                cardsInHand[1].position = transform.position + new Vector3(0f, -.4f, -2.1f);
+                cardsInHand[2].position = transform.position + new Vector3(1.24f, -.4f, -2.1f);
                 break;
             case 4:
-                cardsInHand[0].position = transform.position + new Vector3(-1.85f, 0, -1.5f);
-                cardsInHand[1].position = transform.position + new Vector3(-0.62f, 0, -1.5f);
-                cardsInHand[2].position = transform.position + new Vector3(0.62f, 0, -1.5f);
-                cardsInHand[3].position = transform.position + new Vector3(1.85f, 0, -1.5f);
+                cardsInHand[0].position = transform.position + new Vector3(-1.85f, -.4f, -2.1f);
+                cardsInHand[1].position = transform.position + new Vector3(-0.62f, -.4f, -2.1f);
+                cardsInHand[2].position = transform.position + new Vector3(0.62f, -.4f, -2.1f);
+                cardsInHand[3].position = transform.position + new Vector3(1.85f, -.4f, -2.1f);
                 break;
             case 5:
-                cardsInHand[0].position = transform.position + new Vector3(-2.5f, 0, -1.5f);
-                cardsInHand[1].position = transform.position + new Vector3(-1.24f, 0, -1.5f);
-                cardsInHand[2].position = transform.position + new Vector3(0, 0, -1.5f);
-                cardsInHand[3].position = transform.position + new Vector3(1.24f, 0, -1.5f);
-                cardsInHand[4].position = transform.position + new Vector3(2.5f, 0, -1.5f);
+                cardsInHand[0].position = transform.position + new Vector3(-2.5f, -.4f, -2.1f);
+                cardsInHand[1].position = transform.position + new Vector3(-1.24f, -.4f, -2.1f);
+                cardsInHand[2].position = transform.position + new Vector3(0, -.4f, -2.1f);
+                cardsInHand[3].position = transform.position + new Vector3(1.24f, -.4f, -2.1f);
+                cardsInHand[4].position = transform.position + new Vector3(2.5f, -.4f, -2.1f);
                 break;
             case 6:
-                cardsInHand[0].position = transform.position + new Vector3(-3.1f, 0, -1.5f);
-                cardsInHand[1].position = transform.position + new Vector3(-1.85f, 0, -1.5f);
-                cardsInHand[2].position = transform.position + new Vector3(-0.62f, 0, -1.5f);
-                cardsInHand[3].position = transform.position + new Vector3(0.62f, 0, -1.5f);
-                cardsInHand[4].position = transform.position + new Vector3(1.85f, 0, -1.5f);
-                cardsInHand[5].position = transform.position + new Vector3(3.1f, 0, -1.5f);
+                cardsInHand[0].position = transform.position + new Vector3(-3.1f, -.4f, -2.1f);
+                cardsInHand[1].position = transform.position + new Vector3(-1.85f, -.4f, -2.1f);
+                cardsInHand[2].position = transform.position + new Vector3(-0.62f, -.4f, -2.1f);
+                cardsInHand[3].position = transform.position + new Vector3(0.62f, -.4f, -2.1f);
+                cardsInHand[4].position = transform.position + new Vector3(1.85f, -.4f, -2.1f);
+                cardsInHand[5].position = transform.position + new Vector3(3.1f, -.4f, -2.1f);
                 break;
             default:
                 break;

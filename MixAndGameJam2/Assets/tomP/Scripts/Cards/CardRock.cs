@@ -9,7 +9,7 @@ public class CardRock : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sprite = Resources.Load<Sprite>("CardsSprites/CARDS__0013_THROW");
+        sprite = Resources.Load<Sprite>("CardsSprites/THROW");
 
         GetComponent<CardManager>().setTitle("Throw a rock");
         GetComponent<CardManager>().setDescription("Throw a rock that alert the enemies near it's hit position.");
