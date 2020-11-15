@@ -1,8 +1,14 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:MixAndGameJam2/Assets/tomP/Materials/SpriteCard.mat.meta
+guid: 70200d5c7a097ef409d7ea151f84cb5b
+NativeFormatImporter:
+=======
 guid: 77f024dff4cc89e45afcd0cd5a60f097
 folderAsset: yes
 DefaultImporter:
+>>>>>>> 992d03759faadaaa78c55963034967b5f88e1849:MixAndGameJam2/Assets/Resources/CardsSprites.meta~refs.meta
   externalObjects: {}
+  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

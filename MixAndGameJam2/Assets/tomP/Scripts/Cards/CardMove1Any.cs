@@ -9,7 +9,7 @@ public class CardMove1Any : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sprite = Resources.Load<Sprite>("CardsSprites/CARDS__0008_1X_TOUTSENS");
+        sprite = Resources.Load<Sprite>("CardsSprites/1TOUTSENS");
 
         GetComponent<CardManager>().setTitle("Move 1 any");
         GetComponent<CardManager>().setDescription("Move the character 1 tile in any direction.");

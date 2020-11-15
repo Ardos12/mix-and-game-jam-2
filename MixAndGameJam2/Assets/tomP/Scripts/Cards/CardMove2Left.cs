@@ -9,7 +9,7 @@ public class CardMove2Left : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sprite = Resources.Load<Sprite>("CardsSprites/CARDS__0004_2X_LEFT");
+        sprite = Resources.Load<Sprite>("CardsSprites/2LEFT");
 
         GetComponent<CardManager>().setTitle("Move 2 left");
         GetComponent<CardManager>().setDescription("Move the character 2 tiles left.");

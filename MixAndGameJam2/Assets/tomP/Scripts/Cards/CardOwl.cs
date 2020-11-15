@@ -9,7 +9,7 @@ public class CardOwl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sprite = Resources.Load<Sprite>("CardsSprites/CARDS__0010_OWL");
+        sprite = Resources.Load<Sprite>("CardsSprites/OWL");
 
         GetComponent<CardManager>().setTitle("Scare the owl");
         GetComponent<CardManager>().setDescription("The owl is scared by some noise and alert the enemies near it's position.");

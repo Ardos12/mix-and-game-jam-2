@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 [System.Serializable]
 public struct Deck
@@ -38,8 +39,12 @@ public class DeckManager : MonoBehaviour
     private List<CardManager> cardsInDeck;
     private List<CardManager> cardsInTrash;
     private GameController gameController;
+    private PlayerController playerController;
 
     private int actionsLeft = 2;
+
+    public bool choosingDir;
+    public TMP_Text chooseDir;
 
     void Start()
     {
@@ -177,6 +182,9 @@ public class DeckManager : MonoBehaviour
 
         cardsInDeck = shuffleList(cardsInDeck);
         gameController = FindObjectOfType<GameController>();
+        playerController = FindObjectOfType<PlayerController>();
+
+        chooseDir.enabled = false;
     }
 
     public List<CardManager> shuffleList(List<CardManager> list)
@@ -252,10 +260,37 @@ public class DeckManager : MonoBehaviour
         //    drawACard();
         //}
 
-        if(gameController.getPlayerTurn())
+        if(choosingDir)
         {
-            if (actionsLeft == 2)
+            chooseDir.enabled = true;
+            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.LeftArrow))
             {
+                playerController.moveLeft(1);
+                choosingDir = false;
+            }
+            else if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                playerController.moveUp(1);
+                choosingDir = false;
+            }
+            else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                playerController.moveRight(1);
+                choosingDir = false;
+            }
+            else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                playerController.moveDown(1);
+                choosingDir = false;
+            }
+        }
+        else if(gameController.getPlayerTurn())
+        {
+            chooseDir.enabled = false;
+            if (actionsLeft == 2) //Begin turn
+            {
+                if (playerController.getCosplay() > 0) playerController.setCosplay(playerController.getCosplay() - 1);
+                else playerController.setHidden(false);
                 while (cardsInHand.Count < 5) drawACard();
             }
             else if (actionsLeft <= 0)
@@ -293,37 +328,37 @@ public class DeckManager : MonoBehaviour
         switch(cardsInHand.Count)
         {
             case 1:
-                cardsInHand[0].position = transform.position + new Vector3(0, 0, -1.5f);
+                cardsInHand[0].position = transform.position + new Vector3(0, -.4f, -2.1f);
                 break;
             case 2:
-                cardsInHand[0].position = transform.position + new Vector3(-0.62f, 0, -1.5f);
-                cardsInHand[1].position = transform.position + new Vector3(0.62f, 0, -1.5f);
+                cardsInHand[0].position = transform.position + new Vector3(-0.62f, -.4f, -2.1f);
+                cardsInHand[1].position = transform.position + new Vector3(0.62f, -.4f, -2.1f);
                 break;
             case 3:
-                cardsInHand[0].position = transform.position + new Vector3(-1.24f, 0, -1.5f);
-                cardsInHand[1].position = transform.position + new Vector3(0f, 0, -1.5f);
-                cardsInHand[2].position = transform.position + new Vector3(1.24f, 0, -1.5f);
+                cardsInHand[0].position = transform.position + new Vector3(-1.24f, -.4f, -2.1f);
+                cardsInHand[1].position = transform.position + new Vector3(0f, -.4f, -2.1f);
+                cardsInHand[2].position = transform.position + new Vector3(1.24f, -.4f, -2.1f);
                 break;
             case 4:
-                cardsInHand[0].position = transform.position + new Vector3(-1.85f, 0, -1.5f);
-                cardsInHand[1].position = transform.position + new Vector3(-0.62f, 0, -1.5f);
-                cardsInHand[2].position = transform.position + new Vector3(0.62f, 0, -1.5f);
-                cardsInHand[3].position = transform.position + new Vector3(1.85f, 0, -1.5f);
+                cardsInHand[0].position = transform.position + new Vector3(-1.85f, -.4f, -2.1f);
+                cardsInHand[1].position = transform.position + new Vector3(-0.62f, -.4f, -2.1f);
+                cardsInHand[2].position = transform.position + new Vector3(0.62f, -.4f, -2.1f);
+                cardsInHand[3].position = transform.position + new Vector3(1.85f, -.4f, -2.1f);
                 break;
             case 5:
-                cardsInHand[0].position = transform.position + new Vector3(-2.5f, 0, -1.5f);
-                cardsInHand[1].position = transform.position + new Vector3(-1.24f, 0, -1.5f);
-                cardsInHand[2].position = transform.position + new Vector3(0, 0, -1.5f);
-                cardsInHand[3].position = transform.position + new Vector3(1.24f, 0, -1.5f);
-                cardsInHand[4].position = transform.position + new Vector3(2.5f, 0, -1.5f);
+                cardsInHand[0].position = transform.position + new Vector3(-2.5f, -.4f, -2.1f);
+                cardsInHand[1].position = transform.position + new Vector3(-1.24f, -.4f, -2.1f);
+                cardsInHand[2].position = transform.position + new Vector3(0, -.4f, -2.1f);
+                cardsInHand[3].position = transform.position + new Vector3(1.24f, -.4f, -2.1f);
+                cardsInHand[4].position = transform.position + new Vector3(2.5f, -.4f, -2.1f);
                 break;
             case 6:
-                cardsInHand[0].position = transform.position + new Vector3(-3.1f, 0, -1.5f);
-                cardsInHand[1].position = transform.position + new Vector3(-1.85f, 0, -1.5f);
-                cardsInHand[2].position = transform.position + new Vector3(-0.62f, 0, -1.5f);
-                cardsInHand[3].position = transform.position + new Vector3(0.62f, 0, -1.5f);
-                cardsInHand[4].position = transform.position + new Vector3(1.85f, 0, -1.5f);
-                cardsInHand[5].position = transform.position + new Vector3(3.1f, 0, -1.5f);
+                cardsInHand[0].position = transform.position + new Vector3(-3.1f, -.4f, -2.1f);
+                cardsInHand[1].position = transform.position + new Vector3(-1.85f, -.4f, -2.1f);
+                cardsInHand[2].position = transform.position + new Vector3(-0.62f, -.4f, -2.1f);
+                cardsInHand[3].position = transform.position + new Vector3(0.62f, -.4f, -2.1f);
+                cardsInHand[4].position = transform.position + new Vector3(1.85f, -.4f, -2.1f);
+                cardsInHand[5].position = transform.position + new Vector3(3.1f, -.4f, -2.1f);
                 break;
             default:
                 break;
