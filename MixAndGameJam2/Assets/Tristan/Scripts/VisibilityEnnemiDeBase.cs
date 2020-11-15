@@ -68,6 +68,11 @@ public class VisibilityEnnemiDeBase : MonoBehaviour
 
     public bool isPlayerVisible()
     {
+        if (GetComponent<EnnemiScript>().knockOut > 0)
+        {
+            return false;
+        }
+
         int x = player.getX();
         int z = player.getZ();
         bool toRet = false;

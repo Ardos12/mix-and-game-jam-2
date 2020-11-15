@@ -110,6 +110,11 @@ public class OwlVisibility : MonoBehaviour
 
     public bool isPlayerVisible()
     {
+        if(GetComponent<EnnemiScript>().knockOut > 0)
+        {
+            return false;
+        }
+
         bool toRet = false;
         bool wall = false;
 
