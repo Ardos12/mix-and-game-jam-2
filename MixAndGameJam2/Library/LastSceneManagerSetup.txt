@@ -1,6 +1,10 @@
 sceneSetups:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 - path: Assets/Colla/SCENE_MENU.unity
+=======
+- path: Assets/Colla/LEVELB.unity
+>>>>>>> Stashed changes
 =======
 - path: Assets/Colla/LEVELB.unity
 >>>>>>> Stashed changes
