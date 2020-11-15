@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/William/Scene_Will.unity
+- path: Assets/Colla/SCENE_MENU.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
