@@ -73,14 +73,22 @@ public class GameController : MonoBehaviour
 
         foreach(GameObject ennemi in ennemies)
         {
-            if(ennemi.GetComponent<BasicEnnemiMovement>() != null)
+            if(ennemi.GetComponent<BasicEnnemiMovement>() != null && ennemi.GetComponent<EnnemiScript>().knockOut <= 0)
             {
                 ennemi.GetComponent<BasicEnnemiMovement>().move();
             }
+            else if(ennemi.GetComponent<BasicEnnemiMovement>() != null)
+            {
+                ennemi.GetComponent<EnnemiScript>().knockOut--;
+            }
 
-            else if (ennemi.GetComponent<OwlBehavior>() != null)
+            else if (ennemi.GetComponent<OwlBehavior>() != null && ennemi.GetComponent<EnnemiScript>().knockOut <= 0)
             {
                 ennemi.GetComponent<OwlBehavior>().move();
+            }
+            else if (ennemi.GetComponent<OwlBehavior>() != null)
+            {
+                ennemi.GetComponent<EnnemiScript>().knockOut--;
             }
         }
 

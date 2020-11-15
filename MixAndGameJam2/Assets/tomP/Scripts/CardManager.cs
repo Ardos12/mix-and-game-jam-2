@@ -102,7 +102,10 @@ public class CardManager : MonoBehaviour
         }
         else if (GetComponent<CardHide>() != null) playerController.hideInTheTile();
         else if (GetComponent<CardHideSpecial>() != null) playerController.hide();
-        else if (GetComponent<CardRock>() != null) playerController.koEnemy();
+        else if (GetComponent<CardKO>() != null)
+        {
+            deck.choosingAim = true;
+        }
         else if (GetComponent<CardCosplay>() != null) playerController.useCosplay();
         else if (GetComponent<CardOwl>() != null) playerController.imitateOwl();
     }

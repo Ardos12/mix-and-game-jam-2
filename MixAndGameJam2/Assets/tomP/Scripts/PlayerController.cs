@@ -32,6 +32,9 @@ public class PlayerController : MonoBehaviour
     {
         //DebugControls();
         //Debug.Log("X : " + x + "\nZ : " + z);
+
+        if (hidden) GetComponent<MeshRenderer>().enabled = false;
+        else GetComponent<MeshRenderer>().enabled = true;
     }
 
     private void DebugControls()
@@ -92,10 +95,10 @@ public class PlayerController : MonoBehaviour
 
     public void hideInTheTile()
     {
-        //if(map.getTile(x, z).GetComponent<CanHide>() != null) // Can hide in tile
-        //{
-        //    hidden = true;
-        //}
+        if (map.getTile(x, z).GetComponent<CanHide>() != null) // Can hide in tile
+        {
+            hidden = true;
+        }
     }
 
     public void hide()
@@ -103,9 +106,74 @@ public class PlayerController : MonoBehaviour
         hidden = true;
     }
 
-    public void koEnemy()
+    public void koEnemy(int dir)
     {
-        /*WIP*/
+        GameObject[] ennemies = GameObject.FindGameObjectsWithTag("Ennemi");
+        switch (dir)
+        {
+            case 0: // Left
+                foreach(GameObject ennemi in ennemies)
+                {
+                    if(ennemi.GetComponent<BasicEnnemiMovement>() != null)
+                    {
+                        BasicEnnemiMovement temp = ennemi.GetComponent<BasicEnnemiMovement>();
+                        if ((temp.getX() == x - 1 || temp.getX() == x - 1) && temp.getZ() == z) temp.GetComponent<EnnemiScript>().knockOut = 4; //Knockout the ennemi
+                    }
+                    else if(ennemi.GetComponent<OwlBehavior>() != null)
+                    {
+                        OwlBehavior temp = ennemi.GetComponent<OwlBehavior>();
+                        if ((temp.getX() == x - 1 || temp.getX() == x - 1) && temp.getZ() == z) temp.GetComponent<EnnemiScript>().knockOut = 4; //Knockout the ennemi
+                    }
+                }
+                break;
+            case 1: // up
+                foreach (GameObject ennemi in ennemies)
+                {
+                    if (ennemi.GetComponent<BasicEnnemiMovement>() != null)
+                    {
+                        BasicEnnemiMovement temp = ennemi.GetComponent<BasicEnnemiMovement>();
+                        if ((temp.getZ() == z + 1 || temp.getZ() == z + 2) && temp.getX() == x) temp.GetComponent<EnnemiScript>().knockOut = 4; //Knockout the ennemi
+                    }
+                    else if (ennemi.GetComponent<OwlBehavior>() != null)
+                    {
+                        OwlBehavior temp = ennemi.GetComponent<OwlBehavior>();
+                        if ((temp.getZ() == z + 2 || temp.getZ() == z + 1) && temp.getX() == x) temp.GetComponent<EnnemiScript>().knockOut = 4; //Knockout the ennemi
+                    }
+                }
+                break;
+            case 2: // Right
+                foreach (GameObject ennemi in ennemies)
+                {
+                    if (ennemi.GetComponent<BasicEnnemiMovement>() != null)
+                    {
+                        BasicEnnemiMovement temp = ennemi.GetComponent<BasicEnnemiMovement>();
+                        if ((temp.getX() == x + 1 || temp.getX() == x + 1) && temp.getZ() == z) temp.GetComponent<EnnemiScript>().knockOut = 4; //Knockout the ennemi
+                    }
+                    else if (ennemi.GetComponent<OwlBehavior>() != null)
+                    {
+                        OwlBehavior temp = ennemi.GetComponent<OwlBehavior>();
+                        if ((temp.getX() == x + 1 || temp.getX() == x + 1) && temp.getZ() == z) temp.GetComponent<EnnemiScript>().knockOut = 4; //Knockout the ennemi
+                    }
+                }
+                break;
+            case 3: // Down
+                foreach (GameObject ennemi in ennemies)
+                {
+                    if (ennemi.GetComponent<BasicEnnemiMovement>() != null)
+                    {
+                        BasicEnnemiMovement temp = ennemi.GetComponent<BasicEnnemiMovement>();
+                        if ((temp.getZ() == z - 1 || temp.getZ() == z - 2) && temp.getX() == x) temp.GetComponent<EnnemiScript>().knockOut = 4; //Knockout the ennemi
+                    }
+                    else if (ennemi.GetComponent<OwlBehavior>() != null)
+                    {
+                        OwlBehavior temp = ennemi.GetComponent<OwlBehavior>();
+                        if ((temp.getZ() == z - 2 || temp.getZ() == z - 1) && temp.getX() == x) temp.GetComponent<EnnemiScript>().knockOut = 4; //Knockout the ennemi
+                    }
+                }
+                break;
+            default:
+                break;
+        }
     }
 
     public void useCosplay()

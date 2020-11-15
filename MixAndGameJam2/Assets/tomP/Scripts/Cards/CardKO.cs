@@ -9,10 +9,10 @@ public class CardKO : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sprite = Resources.Load<Sprite>("CardsSprites/KNOCKOUT");
+        sprite = Resources.Load<Sprite>("CardsSprites/ROCK");
 
         GetComponent<CardManager>().setTitle("Knockout");
-        GetComponent<CardManager>().setDescription("You put an enemy to sleep for 4 turns.");
+        GetComponent<CardManager>().setDescription("You put an enemy at 2 tiles or less to sleep for 4 turns.");
         GetComponent<CardManager>().setImage(sprite);
     }
 

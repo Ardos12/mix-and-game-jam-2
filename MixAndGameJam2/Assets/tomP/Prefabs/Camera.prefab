@@ -46,7 +46,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deck: []
   card: {fileID: 5064741084669657694, guid: 89a516c187b357743acd318a2ce2f342, type: 3}
+  choosingDir: 0
   chooseDir: {fileID: 4526988203762401877}
+  choosingAim: 0
+  chooseAim: {fileID: 0}
 --- !u!1 &3877268573345771962
 GameObject:
   m_ObjectHideFlags: 0

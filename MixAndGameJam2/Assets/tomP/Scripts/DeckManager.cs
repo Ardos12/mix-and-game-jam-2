@@ -46,6 +46,8 @@ public class DeckManager : MonoBehaviour
     public bool choosingDir;
     public TMP_Text chooseDir;
 
+    public bool choosingAim;
+
     void Start()
     {
         cardsInHand = new List<CardManager>();
@@ -281,6 +283,30 @@ public class DeckManager : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
             {
                 playerController.moveDown(1);
+                choosingDir = false;
+            }
+        }
+        else if(choosingAim)
+        {
+            chooseDir.enabled = true;
+            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                playerController.koEnemy(0);
+                choosingDir = false;
+            }
+            else if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                playerController.koEnemy(1);
+                choosingDir = false;
+            }
+            else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                playerController.koEnemy(2);
+                choosingDir = false;
+            }
+            else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                playerController.koEnemy(3);
                 choosingDir = false;
             }
         }
