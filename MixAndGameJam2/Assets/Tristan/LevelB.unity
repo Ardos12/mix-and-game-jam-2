@@ -17587,7 +17587,7 @@ PrefabInstance:
     - target: {fileID: 2419874458031311304, guid: 7faeb53c39191d94e947c0099d46f957,
         type: 3}
       propertyPath: deck.Array.data[2].number
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2419874458031311304, guid: 7faeb53c39191d94e947c0099d46f957,
         type: 3}
@@ -17607,7 +17607,7 @@ PrefabInstance:
     - target: {fileID: 2419874458031311304, guid: 7faeb53c39191d94e947c0099d46f957,
         type: 3}
       propertyPath: deck.Array.data[4].number
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2419874458031311304, guid: 7faeb53c39191d94e947c0099d46f957,
         type: 3}
@@ -17627,7 +17627,7 @@ PrefabInstance:
     - target: {fileID: 2419874458031311304, guid: 7faeb53c39191d94e947c0099d46f957,
         type: 3}
       propertyPath: deck.Array.data[6].number
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2419874458031311304, guid: 7faeb53c39191d94e947c0099d46f957,
         type: 3}
