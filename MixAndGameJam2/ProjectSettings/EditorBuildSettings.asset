@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/tomP/Levels/SCENE_INTRO.unity
     guid: d0ade8dfdb7f46247bbbeab75c7db56a
   - enabled: 1
+    path: Assets/tomP/Levels/LEVELTUTO.unity
+    guid: 18ea88ac260fe80468933cc352cda91c
+  - enabled: 1
     path: Assets/Colla/LEVELA.unity
     guid: 4aafb08b08996a34eaf6473282b90fac
   - enabled: 1
