@@ -76,6 +76,13 @@ public class SoundManager : MonoBehaviour
         ambiantSource.Play();
     }
 
+    public void playAmbianceCampfire()
+    {
+        ambiantSource.Stop();
+        ambiantSource.clip = campfire;
+        ambiantSource.Play();
+    }
+
     public void playDashEnemy()
     {
         audioEnemy.Stop();
