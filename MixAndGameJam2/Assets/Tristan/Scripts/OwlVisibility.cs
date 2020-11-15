@@ -192,7 +192,7 @@ public class OwlVisibility : MonoBehaviour
                 }
             }
         }
-
+        if(toRet) FindObjectOfType<SoundManager>().playOwl();
         return toRet;
     }
 }

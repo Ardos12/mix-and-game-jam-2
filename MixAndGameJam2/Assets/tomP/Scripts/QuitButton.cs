@@ -19,6 +19,7 @@ public class QuitButton : MonoBehaviour
 
     void TaskOnClick()
     {
+        FindObjectOfType<SoundManager>().playUI2();
         Application.Quit();
     }
 

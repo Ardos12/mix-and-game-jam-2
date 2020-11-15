@@ -55,6 +55,7 @@ public class PlayerController : MonoBehaviour
             z = (int)(transform.position.z / tileSize);
             transform.LookAt(new Vector3(-99999, 0, 0), Vector3.up);
         }
+        //FindObjectOfType<SoundManager>().playDashPlayer();
     }
 
     public void moveRight(int tileNb)
@@ -67,6 +68,7 @@ public class PlayerController : MonoBehaviour
             z = (int)(transform.position.z / tileSize);
             transform.LookAt(new Vector3(99999, 0, 0), Vector3.up);
         }
+        //FindObjectOfType<SoundManager>().playDashPlayer();
     }
 
     public void moveUp(int tileNb)
@@ -79,6 +81,7 @@ public class PlayerController : MonoBehaviour
             z = (int)(transform.position.z / tileSize);
             transform.LookAt(new Vector3(0, 0, 99999), Vector3.up);
         }
+        //FindObjectOfType<SoundManager>().playDashPlayer();
     }
 
     public void moveDown(int tileNb)
@@ -91,6 +94,7 @@ public class PlayerController : MonoBehaviour
             z = (int)(transform.position.z / tileSize);
             transform.LookAt(new Vector3(0, 0, -99999), Vector3.up);
         }
+        //FindObjectOfType<SoundManager>().playDashPlayer();
     }
 
     public void hideInTheTile()
@@ -101,6 +105,7 @@ public class PlayerController : MonoBehaviour
             cosplay = 1;
             Debug.Log("Pouet");
             GameObject.FindGameObjectWithTag("MeshPlayer").GetComponent<SkinnedMeshRenderer>().enabled = false;
+            FindObjectOfType<SoundManager>().playDashPlayer();
         }
     }
 
@@ -122,12 +127,20 @@ public class PlayerController : MonoBehaviour
                     if(ennemi.GetComponent<BasicEnnemiMovement>() != null)
                     {
                         BasicEnnemiMovement temp = ennemi.GetComponent<BasicEnnemiMovement>();
-                        if ((temp.getX() == x - 1 || temp.getX() == x - 2) && temp.getZ() == z) temp.GetComponent<EnnemiScript>().knockOut = 4; //Knockout the ennemi
+                        if ((temp.getX() == x - 1 || temp.getX() == x - 2) && temp.getZ() == z)
+                        {
+                            temp.GetComponent<EnnemiScript>().knockOut = 4; //Knockout the ennemi
+                            FindObjectOfType<SoundManager>().playRockHit();
+                        }
                     }
                     else if(ennemi.GetComponent<OwlBehavior>() != null)
                     {
                         OwlBehavior temp = ennemi.GetComponent<OwlBehavior>();
-                        if ((temp.getX() == x - 1 || temp.getX() == x - 2) && temp.getZ() == z) temp.GetComponent<EnnemiScript>().knockOut = 4; //Knockout the ennemi
+                        if ((temp.getX() == x - 1 || temp.getX() == x - 2) && temp.getZ() == z)
+                        {
+                            temp.GetComponent<EnnemiScript>().knockOut = 4; //Knockout the ennemi
+                            FindObjectOfType<SoundManager>().playRockHit();
+                        }
                     }
                 }
                 break;
@@ -137,12 +150,20 @@ public class PlayerController : MonoBehaviour
                     if (ennemi.GetComponent<BasicEnnemiMovement>() != null)
                     {
                         BasicEnnemiMovement temp = ennemi.GetComponent<BasicEnnemiMovement>();
-                        if ((temp.getZ() == z + 1 || temp.getZ() == z + 2) && temp.getX() == x) temp.GetComponent<EnnemiScript>().knockOut = 4; //Knockout the ennemi
+                        if ((temp.getZ() == z + 1 || temp.getZ() == z + 2) && temp.getX() == x)
+                        {
+                            temp.GetComponent<EnnemiScript>().knockOut = 4; //Knockout the ennemi
+                            FindObjectOfType<SoundManager>().playRockHit();
+                        }
                     }
                     else if (ennemi.GetComponent<OwlBehavior>() != null)
                     {
                         OwlBehavior temp = ennemi.GetComponent<OwlBehavior>();
-                        if ((temp.getZ() == z + 2 || temp.getZ() == z + 1) && temp.getX() == x) temp.GetComponent<EnnemiScript>().knockOut = 4; //Knockout the ennemi
+                        if ((temp.getZ() == z + 2 || temp.getZ() == z + 1) && temp.getX() == x)
+                        {
+                            temp.GetComponent<EnnemiScript>().knockOut = 4; //Knockout the ennemi
+                            FindObjectOfType<SoundManager>().playRockHit();
+                        }
                     }
                 }
                 break;
@@ -152,12 +173,20 @@ public class PlayerController : MonoBehaviour
                     if (ennemi.GetComponent<BasicEnnemiMovement>() != null)
                     {
                         BasicEnnemiMovement temp = ennemi.GetComponent<BasicEnnemiMovement>();
-                        if ((temp.getX() == x + 1 || temp.getX() == x + 2) && temp.getZ() == z) temp.GetComponent<EnnemiScript>().knockOut = 4; //Knockout the ennemi
+                        if ((temp.getX() == x + 1 || temp.getX() == x + 2) && temp.getZ() == z)
+                        {
+                            temp.GetComponent<EnnemiScript>().knockOut = 4; //Knockout the ennemi
+                            FindObjectOfType<SoundManager>().playRockHit();
+                        }
                     }
                     else if (ennemi.GetComponent<OwlBehavior>() != null)
                     {
                         OwlBehavior temp = ennemi.GetComponent<OwlBehavior>();
-                        if ((temp.getX() == x + 1 || temp.getX() == x + 2) && temp.getZ() == z) temp.GetComponent<EnnemiScript>().knockOut = 4; //Knockout the ennemi
+                        if ((temp.getX() == x + 1 || temp.getX() == x + 2) && temp.getZ() == z)
+                        {
+                            temp.GetComponent<EnnemiScript>().knockOut = 4; //Knockout the ennemi
+                            FindObjectOfType<SoundManager>().playRockHit();
+                        }
                     }
                 }
                 break;
@@ -167,12 +196,20 @@ public class PlayerController : MonoBehaviour
                     if (ennemi.GetComponent<BasicEnnemiMovement>() != null)
                     {
                         BasicEnnemiMovement temp = ennemi.GetComponent<BasicEnnemiMovement>();
-                        if ((temp.getZ() == z - 1 || temp.getZ() == z - 2) && temp.getX() == x) temp.GetComponent<EnnemiScript>().knockOut = 4; //Knockout the ennemi
+                        if ((temp.getZ() == z - 1 || temp.getZ() == z - 2) && temp.getX() == x)
+                        {
+                            temp.GetComponent<EnnemiScript>().knockOut = 4; //Knockout the ennemi
+                            FindObjectOfType<SoundManager>().playRockHit();
+                        }
                     }
                     else if (ennemi.GetComponent<OwlBehavior>() != null)
                     {
                         OwlBehavior temp = ennemi.GetComponent<OwlBehavior>();
-                        if ((temp.getZ() == z - 2 || temp.getZ() == z - 1) && temp.getX() == x) temp.GetComponent<EnnemiScript>().knockOut = 4; //Knockout the ennemi
+                        if ((temp.getZ() == z - 2 || temp.getZ() == z - 1) && temp.getX() == x)
+                        {
+                            temp.GetComponent<EnnemiScript>().knockOut = 4; //Knockout the ennemi
+                            FindObjectOfType<SoundManager>().playRockHit();
+                        }
                     }
                 }
                 break;

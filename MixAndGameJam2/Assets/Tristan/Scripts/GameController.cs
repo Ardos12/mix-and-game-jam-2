@@ -38,6 +38,7 @@ public class GameController : MonoBehaviour
         {
             win = true;
             Debug.Log("C'EST GAGNE !!!!!");
+            FindObjectOfType<SoundManager>().playMusicWin();
             //JOUAGE DE SON DE GAGNAGE
             //EMPECHAGE DE REJOUAGE
             StartCoroutine(NextLevel());
@@ -48,6 +49,7 @@ public class GameController : MonoBehaviour
         {
             loose = true;
             Debug.Log("T'as perdu t'es une merde !!");
+            FindObjectOfType<SoundManager>().playMusicLoose();
             //JOUAGE DU SON DE PERDU
             //EMPECHAGE DE REJOUAGE
             StartCoroutine(RetryLevel());
@@ -57,13 +59,13 @@ public class GameController : MonoBehaviour
 
     IEnumerator NextLevel()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(4);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     IEnumerator RetryLevel()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(4);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

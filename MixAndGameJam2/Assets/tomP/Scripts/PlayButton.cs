@@ -20,6 +20,7 @@ public class PlayButton : MonoBehaviour
 
     void TaskOnClick()
     {
+        FindObjectOfType<SoundManager>().playUI1();
         SceneManager.LoadScene(1);
     }
 

@@ -23,8 +23,12 @@ public class SoundManager : MonoBehaviour
     public AudioClip useCard;
     public AudioClip UI1;
     public AudioClip UI2;
+    public AudioClip musicTuto;
     public AudioSource audioSource;
+    public AudioSource audioSource2;
+    public AudioSource audioSource3;
     public AudioSource audioEnemy;
+    public AudioSource audioEnemy2;
     public AudioSource musicSource;
     public AudioSource ambiantSource;
 
@@ -58,6 +62,12 @@ public class SoundManager : MonoBehaviour
         musicSource.clip = credits;
         musicSource.Play();
     }
+    public void playMusicTuto()
+    {
+        musicSource.Stop();
+        musicSource.clip = musicTuto;
+        musicSource.Play();
+    }
     public void playAmbianceFire()
     {
         ambiantSource.Stop();
@@ -85,33 +95,33 @@ public class SoundManager : MonoBehaviour
     }
     public void playRockThrow()
     {
-        audioSource.Stop();
-        audioSource.clip = rockThrow;
-        audioSource.Play();
+        audioSource2.Stop();
+        audioSource2.clip = rockThrow;
+        audioSource2.Play();
     }
     public void playDashPlayer()
     {
-        audioSource.Stop();
-        audioSource.clip = dash2;
-        audioSource.Play();
+        audioSource2.Stop();
+        audioSource2.clip = dash2;
+        audioSource2.Play();
     }
     public void playCardMelange()
     {
-        audioSource.Stop();
-        audioSource.clip = cardMelange1;
-        audioSource.Play();
+        audioSource3.Stop();
+        audioSource3.clip = cardMelange1;
+        audioSource3.Play();
     }
     public void playOwl()
     {
-        audioEnemy.Stop();
-        audioEnemy.clip = owlTurn;
-        audioEnemy.Play();
+        audioSource3.Stop();
+        audioSource3.clip = owlTurn;
+        audioSource3.Play();
     }
     public void playOwlAlert()
     {
-        audioEnemy.Stop();
-        audioEnemy.clip = owlAlert;
-        audioEnemy.Play();
+        audioEnemy2.Stop();
+        audioEnemy2.clip = owlAlert;
+        audioEnemy2.Play();
     }
 
     public void playDrawCard()

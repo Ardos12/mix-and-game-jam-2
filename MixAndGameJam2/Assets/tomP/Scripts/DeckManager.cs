@@ -40,6 +40,7 @@ public class DeckManager : MonoBehaviour
     private List<CardManager> cardsInTrash;
     private GameController gameController;
     private PlayerController playerController;
+    private SoundManager sound;
 
     private int actionsLeft = 2;
 
@@ -185,6 +186,7 @@ public class DeckManager : MonoBehaviour
         cardsInDeck = shuffleList(cardsInDeck);
         gameController = FindObjectOfType<GameController>();
         playerController = FindObjectOfType<PlayerController>();
+        sound = FindObjectOfType<SoundManager>();
 
         chooseDir.enabled = false;
     }
@@ -213,6 +215,7 @@ public class DeckManager : MonoBehaviour
         {
             resetDeck();
         }
+        sound.playDrawCard();
     }
 
     public void resetDeck()
@@ -220,6 +223,8 @@ public class DeckManager : MonoBehaviour
         cardsInDeck = new List<CardManager>(cardsInTrash);
         cardsInDeck = shuffleList(cardsInDeck);
         cardsInTrash.Clear();
+
+        sound.playCardMelange();
     }
 
     public void useCard(int index)
@@ -227,6 +232,8 @@ public class DeckManager : MonoBehaviour
         cardsInTrash.Insert(cardsInTrash.Count, cardsInHand[index]);
         cardsInHand.RemoveAt(index);
         actionsLeft--;
+
+        sound.playUseCard();
     }
 
     void Update()
@@ -293,21 +300,25 @@ public class DeckManager : MonoBehaviour
             {
                 playerController.koEnemy(0);
                 choosingAim = false;
+                FindObjectOfType<SoundManager>().playRockThrow();
             }
             else if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             {
                 playerController.koEnemy(1);
                 choosingAim = false;
+                FindObjectOfType<SoundManager>().playRockThrow();
             }
             else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
             {
                 playerController.koEnemy(2);
                 choosingAim = false;
+                FindObjectOfType<SoundManager>().playRockThrow();
             }
             else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
             {
                 playerController.koEnemy(3);
                 choosingAim = false;
+                FindObjectOfType<SoundManager>().playRockThrow();
             }
         }
         else if(gameController.getPlayerTurn())
