@@ -20,8 +20,6 @@ public class PlayerController : MonoBehaviour
     {
         hidden = false;
         seen = false;
-        hasMoved = false;
-        hasActed = false;
         cosplay = 0;
         map = FindObjectOfType<Map>();
 
@@ -32,7 +30,7 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        DebugControls();
+        //DebugControls();
         //Debug.Log("X : " + x + "\nZ : " + z);
     }
 
@@ -46,16 +44,13 @@ public class PlayerController : MonoBehaviour
 
     public void moveLeft(int tileNb)
     {
-        for (int i = 0; i < tileNb; i++)
+        if (map.getTile(x - 1, z) != null && map.getTile(x - 1, z).GetComponent<Wall>() == null) // Can move left
         {
-            if (map.getTile(x - 1, z) != null && map.getTile(x - 1, z).GetComponent<Wall>() == null) // Can move left
-            {
-                Debug.Log("Gauche");
-                transform.position -= new Vector3(tileSize, 0, 0);
-                x = (int)(transform.position.x / tileSize);
-                z = (int)(transform.position.z / tileSize);
-                transform.LookAt(new Vector3(-99999, 0, 0), Vector3.up);
-            }
+            Debug.Log("Gauche");
+            transform.position -= new Vector3(tileSize, 0, 0);
+            x = (int)(transform.position.x / tileSize);
+            z = (int)(transform.position.z / tileSize);
+            transform.LookAt(new Vector3(-99999, 0, 0), Vector3.up);
         }
     }
 
@@ -97,28 +92,26 @@ public class PlayerController : MonoBehaviour
 
     public void hideInTheTile()
     {
-        if(true) // Can hide in tile
-        {
-            hidden = true;
-            hasActed = true;
-        }
+        //if(map.getTile(x, z).GetComponent<CanHide>() != null) // Can hide in tile
+        //{
+        //    hidden = true;
+        //}
     }
 
     public void hide()
     {
         hidden = true;
-        hasActed = true;
     }
 
     public void koEnemy()
     {
-
+        /*WIP*/
     }
 
     public void useCosplay()
     {
-        cosplay = 3;
-        hasActed = true;
+        hidden = true;
+        cosplay = 2;
     }
 
     public void imitateOwl()
@@ -128,7 +121,6 @@ public class PlayerController : MonoBehaviour
          * guard.alert = true;
          * guard.alertPosition = guard.getOwlPosition()
          */
-        hasActed = true;
     }
 
     public int getX()
@@ -152,5 +144,20 @@ public class PlayerController : MonoBehaviour
     public bool getHidden()
     {
         return hidden;
+    }
+
+    public void setHidden(bool value)
+    {
+        hidden = value;
+    }
+
+    public int getCosplay()
+    {
+        return cosplay;
+    }
+
+    public void setCosplay(int newValue)
+    {
+        cosplay = newValue;
     }
 }

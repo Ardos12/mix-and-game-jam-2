@@ -18,6 +18,7 @@ public class CardManager : MonoBehaviour
     private Vector3 notSelectedOffset;
     bool isMouseOver;
     public bool isInHand;
+    public bool choosingDir;
 
     private DeckManager deck;
     private GameController gameController;
@@ -32,6 +33,7 @@ public class CardManager : MonoBehaviour
         deck = FindObjectOfType<DeckManager>();
         gameController = FindObjectOfType<GameController>();
         playerController = FindObjectOfType<PlayerController>();
+        choosingDir = false;
     }
 
     public void Update()
@@ -42,7 +44,7 @@ public class CardManager : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if(gameController.getPlayerTurn()) isMouseOver = true;
+        if(gameController.getPlayerTurn() && !deck.choosingDir) isMouseOver = true;
     }
 
     private void OnMouseExit()
@@ -52,7 +54,7 @@ public class CardManager : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if(isInHand && gameController.getPlayerTurn())
+        if(isInHand && gameController.getPlayerTurn() && !deck.choosingDir)
         {
             useCard();
             deck.useCard(deck.getCardIndex(this));
@@ -94,6 +96,10 @@ public class CardManager : MonoBehaviour
         else if (GetComponent<CardMove2Down>() != null) for (int i = 0; i < 2; i++) playerController.moveDown(1);
         else if (GetComponent<CardMove2Left>() != null) for (int i = 0; i < 2; i++) playerController.moveLeft(1);
         else if (GetComponent<CardMove2Right>() != null) for (int i = 0; i < 2; i++) playerController.moveRight(1);
+        else if (GetComponent<CardMove1Any>() != null)
+        {
+            deck.choosingDir = true;
+        }
         else if (GetComponent<CardHide>() != null) playerController.hideInTheTile();
         else if (GetComponent<CardHideSpecial>() != null) playerController.hide();
         else if (GetComponent<CardRock>() != null) playerController.koEnemy();

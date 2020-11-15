@@ -11,7 +11,7 @@ public class CardMove2Right : MonoBehaviour
     {
         sprite = Resources.Load<Sprite>("CardsSprites/2RIGHT");
 
-        GetComponent<CardManager>().setTitle("Move 2 down");
+        GetComponent<CardManager>().setTitle("Move 2 right");
         GetComponent<CardManager>().setDescription("Move the character 2 tiles right.");
         GetComponent<CardManager>().setImage(sprite);
     }
