@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 031ca3d53d8e8cf44b32f398b77eee53
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Banksia
+  fontNames:
+  - Banksia
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: e11235794c5d22d4d9bd3cbecae6f3e0, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

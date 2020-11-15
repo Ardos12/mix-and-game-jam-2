@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53ee235f0522d1498e32b577a476f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deck: []
+  card: {fileID: 5064741084669657694, guid: 89a516c187b357743acd318a2ce2f342, type: 3}
 --- !u!1 &5372614255407663455
 GameObject:
   m_ObjectHideFlags: 0

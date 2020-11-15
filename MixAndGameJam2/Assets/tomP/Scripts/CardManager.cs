@@ -10,6 +10,9 @@ public class CardManager : MonoBehaviour
 
     [SerializeField]
     private TMP_Text description;
+    
+    [SerializeField]
+    private SpriteRenderer sprite;
 
     public Vector3 position;
     private Vector3 notSelectedOffset;
@@ -74,6 +77,11 @@ public class CardManager : MonoBehaviour
     public string getDescription()
     {
         return description.text;
+    }
+
+    public void setImage(Sprite sprt)
+    {
+        sprite.sprite = sprt;
     }
 
     public void useCard()

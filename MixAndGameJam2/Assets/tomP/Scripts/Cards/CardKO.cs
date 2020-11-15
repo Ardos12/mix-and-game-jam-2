@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class CardKO : MonoBehaviour
 {
+    Sprite sprite;
+
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<CardManager>().setTitle("Knockout !");
+        sprite = Resources.Load<Sprite>("CardsSprites/CARDS__0009_KNOCKOUT");
+
+        GetComponent<CardManager>().setTitle("Knockout");
+        GetComponent<CardManager>().setDescription("You put an enemy to sleep for 4 turns.");
+        GetComponent<CardManager>().setImage(sprite);
     }
 
     // Update is called once per frame

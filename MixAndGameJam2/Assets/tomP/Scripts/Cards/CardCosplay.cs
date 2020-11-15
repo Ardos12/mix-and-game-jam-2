@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class CardCosplay : MonoBehaviour
 {
+    Sprite sprite;
+
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<CardManager>().setTitle("Cosplay");
+        sprite = Resources.Load<Sprite>("CardsSprites/CARDS__0011_HIDE_SPECIAL");
+
+        GetComponent<CardManager>().setTitle("Bush cosplay");
+        GetComponent<CardManager>().setDescription("The character can't be seen for 3 turns.");
+        GetComponent<CardManager>().setImage(sprite);
     }
+
 
     // Update is called once per frame
     void Update()
