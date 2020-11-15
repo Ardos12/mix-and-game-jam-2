@@ -106,6 +106,11 @@ public class PlayerController : MonoBehaviour
         hasActed = true;
     }
 
+    public void koEnemy()
+    {
+
+    }
+
     public void useCosplay()
     {
         cosplay = 3;

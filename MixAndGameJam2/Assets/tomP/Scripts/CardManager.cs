@@ -82,9 +82,14 @@ public class CardManager : MonoBehaviour
         else if (GetComponent<CardMove1Down>() != null) playerController.moveDown(1);
         else if (GetComponent<CardMove1Left>() != null) playerController.moveLeft(1);
         else if (GetComponent<CardMove1Right>() != null) playerController.moveRight(1);
-        else if (GetComponent<CardMove2Up>() != null) for(int i = 0; i < 2; i++) playerController.moveUp(1);
+        else if (GetComponent<CardMove2Up>() != null) for (int i = 0; i < 2; i++) playerController.moveUp(1);
         else if (GetComponent<CardMove2Down>() != null) for (int i = 0; i < 2; i++) playerController.moveDown(1);
         else if (GetComponent<CardMove2Left>() != null) for (int i = 0; i < 2; i++) playerController.moveLeft(1);
         else if (GetComponent<CardMove2Right>() != null) for (int i = 0; i < 2; i++) playerController.moveRight(1);
+        else if (GetComponent<CardHide>() != null) playerController.hideInTheTile();
+        else if (GetComponent<CardHideSpecial>() != null) playerController.hide();
+        else if (GetComponent<CardRock>() != null) playerController.koEnemy();
+        else if (GetComponent<CardCosplay>() != null) playerController.useCosplay();
+        else if (GetComponent<CardOwl>() != null) playerController.imitateOwl();
     }
 }

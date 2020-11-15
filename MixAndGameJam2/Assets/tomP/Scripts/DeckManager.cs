@@ -199,7 +199,10 @@ public class DeckManager : MonoBehaviour
     {
         cardsInHand.Add(cardsInDeck[0]);
         cardsInDeck.RemoveAt(0);
-        if (cardsInDeck.Count == 0) resetDeck();
+        if (cardsInDeck.Count == 0)
+        {
+            resetDeck();
+        }
     }
 
     public void resetDeck()
@@ -253,7 +256,7 @@ public class DeckManager : MonoBehaviour
         {
             if (actionsLeft == 2)
             {
-                while (cardsInHand.Count < 6) drawACard();
+                while (cardsInHand.Count < 5) drawACard();
             }
             else if (actionsLeft <= 0)
             {
