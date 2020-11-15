@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7790414317361953428}
   - component: {fileID: 7790414317361953429}
   - component: {fileID: 7790414317361953430}
+  - component: {fileID: -6382357479097626791}
   m_Layer: 0
   m_Name: Hibou
   m_TagString: Ennemi
@@ -59,6 +60,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 3
+--- !u!114 &-6382357479097626791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7790414317361953431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71cff5457287da74e8f742f7a88dfcd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7790414316964167730
 PrefabInstance:
   m_ObjectHideFlags: 0
