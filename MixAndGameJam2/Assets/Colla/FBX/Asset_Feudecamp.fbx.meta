@@ -1,12 +1,29 @@
 fileFormatVersion: 2
-guid: 4adcf81e90510584dbc6954b9fb6f7b9
+guid: 13875219f80d797409395838802b6543
 ModelImporter:
   serializedVersion: 19301
-  internalIDToNameTable:
+  internalIDToNameTable: []
+  externalObjects:
   - first:
-      74: 1827226128182048838
-    second: Take 001
-  externalObjects: {}
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BOIS
+    second: {fileID: 2100000, guid: 1d1b1da8811dc4c4abd41c799eb684d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Feu
+    second: {fileID: 2100000, guid: 264b5289f4bf3cd42b4d3e582f187bdc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ROCHE2
+    second: {fileID: 2100000, guid: 9a8ddfd2ddc309f41bbb96430012e78e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SOL
+    second: {fileID: 2100000, guid: 6a524c5ad1f028b4c85c6bcebda038d6, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -84,7 +101,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.04
+    globalScale: 4
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
