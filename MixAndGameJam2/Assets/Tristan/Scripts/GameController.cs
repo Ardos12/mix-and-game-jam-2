@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -8,6 +9,8 @@ public class GameController : MonoBehaviour
     bool playerturn;
     GameObject[] ennemies;
     PlayerController player;
+    bool win;
+    bool loose;
     Map map;
 
     // Start is called before the first frame update
@@ -17,6 +20,8 @@ public class GameController : MonoBehaviour
         ennemies = GameObject.FindGameObjectsWithTag("Ennemi");
         player = GameObject.FindObjectOfType<PlayerController>();
         map = FindObjectOfType<Map>();
+        win = false;
+        loose = false;
 
     }
 
@@ -29,15 +34,19 @@ public class GameController : MonoBehaviour
         }
         
         // TEST LA WIN
-        if(map.getTile(player.getX(), player.getZ()).GetComponent<EndTile>() != null)
+        if(map.getTile(player.getX(), player.getZ()).GetComponent<EndTile>() != null && win == false && loose == false)
         {
+            win = true;
             Debug.Log("C'EST GAGNE !!!!!");
         }
 
 
         // TEST LA LOOSE
-        if (playerSeen())
+        if (playerSeen() && win == false && loose == false)
         {
+            loose = true;
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             Debug.Log("T'as perdu t'es une merde !!");
         }
         
