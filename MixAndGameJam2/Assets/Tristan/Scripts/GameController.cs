@@ -36,6 +36,9 @@ public class GameController : MonoBehaviour
         {
             win = true;
             Debug.Log("C'EST GAGNE !!!!!");
+            //JOUAGE DE SON DE GAGNAGE
+            //EMPECHAGE DE REJOUAGE
+            StartCoroutine(NextLevel());
         }
 
 
@@ -43,10 +46,24 @@ public class GameController : MonoBehaviour
         if (playerSeen() && win == false && loose == false)
         {
             loose = true;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             Debug.Log("T'as perdu t'es une merde !!");
+            //JOUAGE DU SON DE PERDU
+            //EMPECHAGE DE REJOUAGE
+            StartCoroutine(RetryLevel());
         }
         
+    }
+
+    IEnumerator NextLevel()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    IEnumerator RetryLevel()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void endPlayerTurn()
