@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/tomP/Levels/LevelB 1.unity
+- path: Assets/Colla/LEVELB.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
