@@ -33,8 +33,8 @@ public class PlayerController : MonoBehaviour
         //DebugControls();
         //Debug.Log("X : " + x + "\nZ : " + z);
 
-        if (hidden) GetComponent<MeshRenderer>().enabled = false;
-        else GetComponent<MeshRenderer>().enabled = true;
+        if (hidden) GameObject.FindGameObjectWithTag("MeshPlayer").GetComponent<SkinnedMeshRenderer>().enabled = false;
+        else GameObject.FindGameObjectWithTag("MeshPlayer").GetComponent<SkinnedMeshRenderer>().enabled = true;
     }
 
     private void DebugControls()
@@ -98,12 +98,17 @@ public class PlayerController : MonoBehaviour
         if (map.getTile(x, z).GetComponent<CanHide>() != null) // Can hide in tile
         {
             hidden = true;
+            cosplay = 1;
+            Debug.Log("Pouet");
+            GameObject.FindGameObjectWithTag("MeshPlayer").GetComponent<SkinnedMeshRenderer>().enabled = false;
         }
     }
 
     public void hide()
     {
         hidden = true;
+        cosplay = 1;
+        GameObject.FindGameObjectWithTag("MeshPlayer").GetComponent<SkinnedMeshRenderer>().enabled = false;
     }
 
     public void koEnemy(int dir)
