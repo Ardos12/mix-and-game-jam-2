@@ -122,12 +122,12 @@ public class PlayerController : MonoBehaviour
                     if(ennemi.GetComponent<BasicEnnemiMovement>() != null)
                     {
                         BasicEnnemiMovement temp = ennemi.GetComponent<BasicEnnemiMovement>();
-                        if ((temp.getX() == x - 1 || temp.getX() == x - 1) && temp.getZ() == z) temp.GetComponent<EnnemiScript>().knockOut = 4; //Knockout the ennemi
+                        if ((temp.getX() == x - 1 || temp.getX() == x - 2) && temp.getZ() == z) temp.GetComponent<EnnemiScript>().knockOut = 4; //Knockout the ennemi
                     }
                     else if(ennemi.GetComponent<OwlBehavior>() != null)
                     {
                         OwlBehavior temp = ennemi.GetComponent<OwlBehavior>();
-                        if ((temp.getX() == x - 1 || temp.getX() == x - 1) && temp.getZ() == z) temp.GetComponent<EnnemiScript>().knockOut = 4; //Knockout the ennemi
+                        if ((temp.getX() == x - 1 || temp.getX() == x - 2) && temp.getZ() == z) temp.GetComponent<EnnemiScript>().knockOut = 4; //Knockout the ennemi
                     }
                 }
                 break;
@@ -152,12 +152,12 @@ public class PlayerController : MonoBehaviour
                     if (ennemi.GetComponent<BasicEnnemiMovement>() != null)
                     {
                         BasicEnnemiMovement temp = ennemi.GetComponent<BasicEnnemiMovement>();
-                        if ((temp.getX() == x + 1 || temp.getX() == x + 1) && temp.getZ() == z) temp.GetComponent<EnnemiScript>().knockOut = 4; //Knockout the ennemi
+                        if ((temp.getX() == x + 1 || temp.getX() == x + 2) && temp.getZ() == z) temp.GetComponent<EnnemiScript>().knockOut = 4; //Knockout the ennemi
                     }
                     else if (ennemi.GetComponent<OwlBehavior>() != null)
                     {
                         OwlBehavior temp = ennemi.GetComponent<OwlBehavior>();
-                        if ((temp.getX() == x + 1 || temp.getX() == x + 1) && temp.getZ() == z) temp.GetComponent<EnnemiScript>().knockOut = 4; //Knockout the ennemi
+                        if ((temp.getX() == x + 1 || temp.getX() == x + 2) && temp.getZ() == z) temp.GetComponent<EnnemiScript>().knockOut = 4; //Knockout the ennemi
                     }
                 }
                 break;
