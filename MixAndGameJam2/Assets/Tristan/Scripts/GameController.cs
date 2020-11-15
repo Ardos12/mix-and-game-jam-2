@@ -9,8 +9,8 @@ public class GameController : MonoBehaviour
     bool playerturn;
     GameObject[] ennemies;
     PlayerController player;
-    bool win = false;
-    bool loose = false;
+    bool win;
+    bool loose;
     Map map;
 
     // Start is called before the first frame update
@@ -20,6 +20,8 @@ public class GameController : MonoBehaviour
         ennemies = GameObject.FindGameObjectsWithTag("Ennemi");
         player = GameObject.FindObjectOfType<PlayerController>();
         map = FindObjectOfType<Map>();
+        win = false;
+        loose = false;
 
     }
 
@@ -40,7 +42,6 @@ public class GameController : MonoBehaviour
             //EMPECHAGE DE REJOUAGE
             StartCoroutine(NextLevel());
         }
-
 
         // TEST LA LOOSE
         if (playerSeen() && win == false && loose == false)
