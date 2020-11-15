@@ -68,12 +68,7 @@ public class SoundManager : MonoBehaviour
         musicSource.clip = musicTuto;
         musicSource.Play();
     }
-    public void playAmbianceFire()
-    {
-        ambiantSource.Stop();
-        ambiantSource.clip = campfire;
-        ambiantSource.Play();
-    }
+
     public void playAmbianceNature()
     {
         ambiantSource.Stop();
