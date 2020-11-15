@@ -18,15 +18,32 @@ public class BasicEnnemiMovement : MonoBehaviour
 
         x = (int)(transform.position.x / map.sizeTile);
         z = (int)(transform.position.z / map.sizeTile);
+
+        if (currentDirection == "u") // UP
+        {
+            transform.LookAt(new Vector3(0, 0, 99999), Vector3.up);
+        }
+
+        else if (currentDirection == "d") // DOWN
+        {
+            transform.LookAt(new Vector3(0, 0, -99999), Vector3.up);
+        }
+
+        else if (currentDirection == "r") // RIGHT
+        {
+            transform.LookAt(new Vector3(99999, 0, 0), Vector3.up);
+        }
+
+        else if (currentDirection == "l") // LEFT
+        {
+            transform.LookAt(new Vector3(-99999, 0, 0), Vector3.up);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            move();
-        }
+        
     }
 
     public int getX()
@@ -48,19 +65,19 @@ public class BasicEnnemiMovement : MonoBehaviour
 
         if(currentDirection == "u")
         {
-            if (map.getTile(x, z + 1) != null && map.getTile(x, z + 1).GetComponent<Wall>() == null) // UP
+            if (map.getTile(x, z + 1) != null && map.getTile(x, z + 1).GetComponent<Wall>() == null && map.getTile(x, z + 1).GetComponent<EndTile>() == null) // UP
             {
                 tabDirection[0] = 1;
                 nbrDirectionPossibility++;
             }
 
-            if (map.getTile(x + 1, z) != null && map.getTile(x + 1, z).GetComponent<Wall>() == null) // RIGHT
+            if (map.getTile(x + 1, z) != null && map.getTile(x + 1, z).GetComponent<Wall>() == null && map.getTile(x + 1, z).GetComponent<EndTile>() == null) // RIGHT
             {
                 tabDirection[1] = 1;
                 nbrDirectionPossibility++;
             }
 
-            if (map.getTile(x - 1, z) != null && map.getTile(x - 1, z).GetComponent<Wall>() == null) // LEFT
+            if (map.getTile(x - 1, z) != null && map.getTile(x - 1, z).GetComponent<Wall>() == null && map.getTile(x - 1, z).GetComponent<EndTile>() == null) // LEFT
             {
                 tabDirection[3] = 1;
                 nbrDirectionPossibility++;
@@ -119,19 +136,19 @@ public class BasicEnnemiMovement : MonoBehaviour
 
         else if (currentDirection == "d")
         {
-            if (map.getTile(x, z - 1) != null && map.getTile(x, z - 1).GetComponent<Wall>() == null) //DOWN
+            if (map.getTile(x, z - 1) != null && map.getTile(x, z - 1).GetComponent<Wall>() == null && map.getTile(x, z - 1).GetComponent<EndTile>() == null) //DOWN
             {
                 tabDirection[2] = 1;
                 nbrDirectionPossibility++;
             }
 
-            if (map.getTile(x + 1, z) != null && map.getTile(x + 1, z).GetComponent<Wall>() == null) // RIGHT
+            if (map.getTile(x + 1, z) != null && map.getTile(x + 1, z).GetComponent<Wall>() == null && map.getTile(x + 1, z).GetComponent<EndTile>() == null) // RIGHT
             {
                 tabDirection[1] = 1;
                 nbrDirectionPossibility++;
             }
 
-            if (map.getTile(x - 1, z) != null && map.getTile(x - 1, z).GetComponent<Wall>() == null) // LEFT
+            if (map.getTile(x - 1, z) != null && map.getTile(x - 1, z).GetComponent<Wall>() == null && map.getTile(x - 1, z).GetComponent<EndTile>() == null) // LEFT
             {
                 tabDirection[3] = 1;
                 nbrDirectionPossibility++;
@@ -189,19 +206,19 @@ public class BasicEnnemiMovement : MonoBehaviour
 
         else if (currentDirection == "l")
         {
-            if (map.getTile(x - 1, z) != null && map.getTile(x - 1, z).GetComponent<Wall>() == null) // LEFT
+            if (map.getTile(x - 1, z) != null && map.getTile(x - 1, z).GetComponent<Wall>() == null && map.getTile(x - 1, z).GetComponent<EndTile>() == null) // LEFT
             {
                 tabDirection[3] = 1;
                 nbrDirectionPossibility++;
             }
 
-            if (map.getTile(x, z + 1) != null && map.getTile(x, z + 1).GetComponent<Wall>() == null) // UP
+            if (map.getTile(x, z + 1) != null && map.getTile(x, z + 1).GetComponent<Wall>() == null && map.getTile(x, z + 1).GetComponent<EndTile>() == null) // UP
             {
                 tabDirection[0] = 1;
                 nbrDirectionPossibility++;
             }
 
-            if (map.getTile(x, z - 1) != null && map.getTile(x, z - 1).GetComponent<Wall>() == null) //DOWN
+            if (map.getTile(x, z - 1) != null && map.getTile(x, z - 1).GetComponent<Wall>() == null && map.getTile(x, z - 1).GetComponent<EndTile>() == null) //DOWN
             {
                 tabDirection[2] = 1;
                 nbrDirectionPossibility++;
@@ -259,19 +276,19 @@ public class BasicEnnemiMovement : MonoBehaviour
         else if (currentDirection == "r")
         {
 
-            if (map.getTile(x + 1, z) != null && map.getTile(x + 1, z).GetComponent<Wall>() == null) // RIGHT
+            if (map.getTile(x + 1, z) != null && map.getTile(x + 1, z).GetComponent<Wall>() == null && map.getTile(x + 1, z).GetComponent<EndTile>() == null) // RIGHT
             {
                 tabDirection[1] = 1;
                 nbrDirectionPossibility++;
             }
 
-            if (map.getTile(x, z + 1) != null && map.getTile(x, z + 1).GetComponent<Wall>() == null) // UP
+            if (map.getTile(x, z + 1) != null && map.getTile(x, z + 1).GetComponent<Wall>() == null && map.getTile(x, z + 1).GetComponent<EndTile>() == null) // UP
             {
                 tabDirection[0] = 1;
                 nbrDirectionPossibility++;
             }
 
-            if (map.getTile(x, z - 1) != null && map.getTile(x, z - 1).GetComponent<Wall>() == null) //DOWN
+            if (map.getTile(x, z - 1) != null && map.getTile(x, z - 1).GetComponent<Wall>() == null && map.getTile(x, z - 1).GetComponent<EndTile>() == null) //DOWN
             {
                 tabDirection[2] = 1;
                 nbrDirectionPossibility++;

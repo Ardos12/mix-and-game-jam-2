@@ -46,12 +46,15 @@ public class PlayerController : MonoBehaviour
 
     public void moveLeft(int tileNb)
     {
-        if(map.getTile(x - 1, z) != null && map.getTile(x - 1, z).GetComponent<Wall>() == null) // Can move left
+        for (int i = 0; i < tileNb; i++)
         {
-            Debug.Log("Gauche");
-            transform.position -= new Vector3(tileSize * tileNb, 0, 0);
-            x = (int)(transform.position.x / tileSize);
-            z = (int)(transform.position.z / tileSize);
+            if (map.getTile(x - 1, z) != null && map.getTile(x - 1, z).GetComponent<Wall>() == null) // Can move left
+            {
+                Debug.Log("Gauche");
+                transform.position -= new Vector3(tileSize, 0, 0);
+                x = (int)(transform.position.x / tileSize);
+                z = (int)(transform.position.z / tileSize);
+            }
         }
     }
 
@@ -60,7 +63,7 @@ public class PlayerController : MonoBehaviour
         if (map.getTile(x + 1, z) != null && map.getTile(x + 1, z).GetComponent<Wall>() == null) // Can move right
         {
             Debug.Log("Droite");
-            transform.position += new Vector3(tileSize * tileNb, 0, 0);
+            transform.position += new Vector3(tileSize, 0, 0);
             x = (int)(transform.position.x / tileSize);
             z = (int)(transform.position.z / tileSize);
         }
@@ -71,7 +74,7 @@ public class PlayerController : MonoBehaviour
         if (map.getTile(x, z + 1) != null && map.getTile(x, z + 1).GetComponent<Wall>() == null) // Can move up
         {
             Debug.Log("Haut");
-            transform.position += new Vector3(0, 0, tileSize * tileNb);
+            transform.position += new Vector3(0, 0, tileSize);
             x = (int)(transform.position.x / tileSize);
             z = (int)(transform.position.z / tileSize);
         }
@@ -82,7 +85,7 @@ public class PlayerController : MonoBehaviour
         if (map.getTile(x, z - 1) != null && map.getTile(x, z - 1).GetComponent<Wall>() == null) // Can move down
         {
             Debug.Log("Bas");
-            transform.position -= new Vector3(0, 0, tileSize * tileNb);
+            transform.position -= new Vector3(0, 0, tileSize);
             x = (int)(transform.position.x / tileSize);
             z = (int)(transform.position.z / tileSize);
         }

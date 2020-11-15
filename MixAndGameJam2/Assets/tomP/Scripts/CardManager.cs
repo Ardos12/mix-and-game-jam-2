@@ -11,6 +11,51 @@ public class CardManager : MonoBehaviour
     [SerializeField]
     private TMP_Text description;
 
+    public Vector3 position;
+    private Vector3 notSelectedOffset;
+    bool isMouseOver;
+    public bool isInHand;
+
+    private DeckManager deck;
+    private GameController gameController;
+    private PlayerController playerController;
+
+    private void Start()
+    {
+        position = transform.position;
+        isMouseOver = false;
+        isInHand = false;
+        notSelectedOffset = new Vector3(0, -0.8f, -1.2f);
+        deck = FindObjectOfType<DeckManager>();
+        gameController = FindObjectOfType<GameController>();
+        playerController = FindObjectOfType<PlayerController>();
+    }
+
+    public void Update()
+    {
+        if (isMouseOver || !isInHand || !gameController.getPlayerTurn()) transform.position = position;
+        else transform.position = position + notSelectedOffset;
+    }
+
+    private void OnMouseOver()
+    {
+        if(gameController.getPlayerTurn()) isMouseOver = true;
+    }
+
+    private void OnMouseExit()
+    {
+        isMouseOver = false;
+    }
+
+    private void OnMouseDown()
+    {
+        if(isInHand && gameController.getPlayerTurn())
+        {
+            useCard();
+            deck.useCard(deck.getCardIndex(this));
+        }
+    }
+
     public void setTitle(string newTitle)
     {
         title.text = newTitle;
@@ -29,5 +74,17 @@ public class CardManager : MonoBehaviour
     public string getDescription()
     {
         return description.text;
+    }
+
+    public void useCard()
+    {
+        if (GetComponent<CardMove1Up>() != null) playerController.moveUp(1);
+        else if (GetComponent<CardMove1Down>() != null) playerController.moveDown(1);
+        else if (GetComponent<CardMove1Left>() != null) playerController.moveLeft(1);
+        else if (GetComponent<CardMove1Right>() != null) playerController.moveRight(1);
+        else if (GetComponent<CardMove2Up>() != null) for(int i = 0; i < 2; i++) playerController.moveUp(1);
+        else if (GetComponent<CardMove2Down>() != null) for (int i = 0; i < 2; i++) playerController.moveDown(1);
+        else if (GetComponent<CardMove2Left>() != null) for (int i = 0; i < 2; i++) playerController.moveLeft(1);
+        else if (GetComponent<CardMove2Right>() != null) for (int i = 0; i < 2; i++) playerController.moveRight(1);
     }
 }

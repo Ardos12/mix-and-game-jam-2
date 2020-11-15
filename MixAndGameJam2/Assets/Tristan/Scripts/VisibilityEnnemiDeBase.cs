@@ -7,7 +7,7 @@ public class VisibilityEnnemiDeBase : MonoBehaviour
 
     string currentDirection;
     int x, z;
-    PlayerController player = FindObjectOfType<PlayerController>();
+    PlayerController player;
 
     Map map;
 
@@ -19,6 +19,8 @@ public class VisibilityEnnemiDeBase : MonoBehaviour
         x = (int)(transform.position.x / map.sizeTile);
         z = (int)(transform.position.z / map.sizeTile);
 
+        player = FindObjectOfType<PlayerController>();
+
     }
 
     // Update is called once per frame
@@ -28,13 +30,7 @@ public class VisibilityEnnemiDeBase : MonoBehaviour
         x = GetComponent<BasicEnnemiMovement>().getX();
         z = GetComponent<BasicEnnemiMovement>().getZ();
         
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-
-            Debug.Log("Direction ennemi : " + currentDirection);
-
-            Debug.Log(isTileVisible(player.getX(), player.getZ()));
-        }
+        
     }
 
     public bool isTileVisible(int x, int z)
@@ -76,27 +72,27 @@ public class VisibilityEnnemiDeBase : MonoBehaviour
         int z = player.getZ();
         bool toRet = false;
 
-        if (x == this.x && z == this.z)
+        if (x == this.x && z == this.z && player.getHidden() == false)
         {
             toRet = true;
         }
 
-        else if (currentDirection == "u" && x == this.x && z == this.z + 1)
+        else if (currentDirection == "u" && x == this.x && z == this.z + 1 && player.getHidden() == false)
         {
             toRet = true;
         }
 
-        else if (currentDirection == "d" && x == this.x && z == this.z - 1)
+        else if (currentDirection == "d" && x == this.x && z == this.z - 1 && player.getHidden() == false)
         {
             toRet = true;
         }
 
-        else if (currentDirection == "r" && x == this.x + 1 && z == this.z)
+        else if (currentDirection == "r" && x == this.x + 1 && z == this.z && player.getHidden() == false)
         {
             toRet = true;
         }
 
-        else if (currentDirection == "l" && x == this.x - 1 && z == this.z)
+        else if (currentDirection == "l" && x == this.x - 1 && z == this.z && player.getHidden() == false)
         {
             toRet = true;
         }
